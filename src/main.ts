@@ -3,6 +3,9 @@ import sigma from './css/sigma-9.css';
 import init from './css/init.css';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
+
+type FtmlStrage = { title: string, page: string, side: string};
+
 let ftml = new Worker(ftmlWorker, {
   type: 'module',
 });
@@ -15,13 +18,14 @@ document.querySelector("head > style#font")!.innerHTML = font;
 // Workerスレッドから受信
 ftml.onmessage = (event: MessageEvent) => {
   const { html, styles, type } = event.data;
-
   const pageStyles = document.getElementById('page-styles')!;
   const pageContent = document.getElementById('page-content')!;
   const sideContent = document.getElementById('side-bar')!;
   if (type == 'page') {
     pageContent.innerHTML = html;
   } else if (type == 'side') {
+    sideContent.innerHTML = html;
+  }  else if (type == 'top') {
     sideContent.innerHTML = html;
   } else {
     pageContent.innerHTML = html;
@@ -43,6 +47,8 @@ editpageField.addEventListener('input', (event) => {
   }
   const value = target.value;
   const type = "page"
+  const FtmlStrageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  localStorage.setItem("FtmlStrage", JSON.stringify(FtmlStrageItem));
   ftml.postMessage({ value: value, type: type });
 });
 
@@ -53,6 +59,8 @@ editsideField.addEventListener('input', (event) => {
   }
   const value = target.value;
   const type = "side"
+  const FtmlStrageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  localStorage.setItem("FtmlStrage", JSON.stringify(FtmlStrageItem));
   ftml.postMessage({ value: value, type: type });
 });
 
@@ -63,6 +71,8 @@ edittitleField.addEventListener('input', (event) => {
   }
   const value = target.value;
   document.querySelector("#page-title")!.innerHTML = value;
+  const FtmlStrageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  localStorage.setItem("FtmlStrage", JSON.stringify(FtmlStrageItem));
 });
 
 editsaveButton.addEventListener('click', async () => {
@@ -83,3 +93,24 @@ editsaveButton.addEventListener('click', async () => {
   }
 })
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // StorageからJSON文字列を取得し、それをパースして元の値を復元
+  const FtmlStrageItem = localStorage.getItem("FtmlStrage");
+  console.log(FtmlStrageItem);
+  if (FtmlStrageItem){
+    const FtmlStrage = JSON.parse(FtmlStrageItem);
+    edittitleField.value = FtmlStrage.title;
+    editpageField.value = FtmlStrage.page;
+    editsideField.value = FtmlStrage.side;
+    if (FtmlStrage.page) {
+      const type = "page"
+      ftml.postMessage({ value: FtmlStrage.page, type: type });
+    }
+    if (FtmlStrage.side) {
+      const type = "side"
+      ftml.postMessage({ value: FtmlStrage.side, type: type });
+    }
+  }
+});
