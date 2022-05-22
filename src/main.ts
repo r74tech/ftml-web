@@ -109,5 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const type = "side"
       ftml.postMessage({ value: FtmlStrage.side, type: type });
     }
+    if (FtmlStrage.title) {
+      document.querySelector("#page-title")!.innerHTML = FtmlStrage.title;
+    }
   }
 });
