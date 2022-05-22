@@ -5,8 +5,7 @@ This repository uses pnpm for package management.
 Install development dependencies and use
 ```bash
 pnpm run compile
-
-
+pnpm run dev
 ```
 for compiling.
 
