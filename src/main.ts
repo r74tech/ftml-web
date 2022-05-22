@@ -13,7 +13,6 @@ let ftml = new Worker(ftmlWorker, {
 document.querySelector("head > style#innercss")!.innerHTML = css;
 document.querySelector("head > style#sigma")!.innerHTML = sigma;
 document.querySelector("head > style#init")!.innerHTML = init;
-document.querySelector("head > style#font")!.innerHTML = font;
 
 // Workerスレッドから受信
 ftml.onmessage = (event: MessageEvent) => {
