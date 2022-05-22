@@ -10,6 +10,7 @@ const ftmlWorker = new Worker("/src/bundle.js");
     const previewStyles = document.getElementById('preview-styles')!;
     const previewContent = document.getElementById('preview-content')!;
     previewContent.innerHTML = html;
+    previewStyles.innerHTML=styles.map(v=>`<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
   };
 
   const textareaField = document.getElementById('textarea-content')!;
