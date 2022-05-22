@@ -4,6 +4,7 @@ specifiers:
   '@types/node': ^17.0.35
   '@vscode-ftml/ftml-wasm': ^1.16.2
   eslint: ^8.16.0
+  sass: ^1.52.1
   typescript: ^4.6.4
   vite: ^2.9.9
   vite-plugin-commonjs-externals: ^0.1.1
@@ -13,8 +14,9 @@ dependencies:
   '@types/node': 17.0.35
   '@vscode-ftml/ftml-wasm': 1.16.2
   eslint: 8.16.0
+  sass: 1.52.1
   typescript: 4.6.4
-  vite: 2.9.9
+  vite: 2.9.9_sass@1.52.1
   vite-plugin-commonjs-externals: 0.1.1
   webpack-dev-server: 4.9.0
 
@@ -1172,6 +1174,10 @@ packages:
     engines: {node: '>= 4'}
     dev: false
 
+  /immutable/4.0.0:
+    resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
+    dev: false
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1668,6 +1674,16 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
+  /sass/1.52.1:
+    resolution: {integrity: sha512-fSzYTbr7z8oQnVJ3Acp9hV80dM1fkMN7mSD/25mpcct9F7FPBMOI8krEYALgU1aZoqGhQNhTPsuSmxjnIvAm4Q==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.0.0
+      source-map-js: 1.0.2
+    dev: false
+
   /schema-utils/4.0.0:
     resolution: {integrity: sha512-1edyXKgh6XnJsJSQ8mKWXnN/BVaIbFMLpouRUrXgVq7WYne5kw3MW7UPhO44uRXQSIpTSXoJbmrR2X0w9kUTyg==}
     engines: {node: '>= 12.13.0'}
@@ -1951,7 +1967,7 @@ packages:
       magic-string: 0.25.9
     dev: false
 
-  /vite/2.9.9:
+  /vite/2.9.9_sass@1.52.1:
     resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -1971,6 +1987,7 @@ packages:
       postcss: 8.4.14
       resolve: 1.22.0
       rollup: 2.74.1
+      sass: 1.52.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: false

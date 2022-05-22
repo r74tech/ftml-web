@@ -9,6 +9,7 @@ module.exports = {
   mode: process.env.MODE,
   base: './',
   root: join(process.cwd(), './src'),
+  publicDir: "./files--static",
   server: {
     port: 1212,
     fs: {
