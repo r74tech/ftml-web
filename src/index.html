@@ -23,8 +23,243 @@
       <div id="container">
         <div id="header">
           <h1><a href="/" class="active"><span>Wikitext Previewer</span></a></h1>
-
           <h2><span></span></h2>
+          <div id="search-top-box" class="form-search">
+            <form id="search-top-box-form" action="dummy" class="input-append">
+              <input id="search-top-box-input" class="text empty search-query" type="text" size="15" name="query"
+                value="Search this site"
+                onfocus="if(YAHOO.util.Dom.hasClass(this, 'empty')){YAHOO.util.Dom.removeClass(this,'empty'); this.value='';}"><input
+                class="button btn" type="submit" name="search" value="Search">
+            </form>
+          </div>
+          <div id="top-bar">
+            <div class="top-bar">
+              <ul>
+                <li><a href="javascript:;">SCPシリーズ</a>
+                  <ul>
+                    <li><a href="javascript:;">シリーズI(001-999)</a></li>
+                    <li><a href="javascript:;">シリーズII(1000-1999)</a></li>
+                    <li><a href="javascript:;">シリーズIII(2000-2999)</a></li>
+                    <li><a href="javascript:;">シリーズIV(3000-3999)</a></li>
+                    <li><a href="javascript:;">シリーズV(4000-4999)</a></li>
+                    <li><a href="javascript:;">シリーズVI(5000-5999)</a></li>
+                    <li><a href="javascript:;">シリーズVII(6000-6999)</a></li>
+                    <li><a href="javascript:;">Joke SCP</a></li>
+                    <li><a href="javascript:;">Archived SCP</a></li>
+                    <li><a href="javascript:;">Explained SCP</a></li>
+                    <li><a href="javascript:;">Anomalousアイテム記録</a>
+                    </li>
+                    <li><a href="javascript:;">超常現象記録</a>
+                    </li>
+                    <li><a href="javascript:;">未解明領域記録</a>
+                    </li>
+                    <li><a href="javascript:;">財団Tales</a></li>
+                    <li><a href="javascript:;">カノンハブ</a></li>
+                    <li><a href="javascript:;">GoIフォーマット</a></li>
+                    <li><a href="javascript:;">事件ファイル</a>
+                    </li>
+                    <li><a href="javascript:;">音声記録</a></li>
+                    <li><a href="javascript:;">Creepy Pasta保管</a></li>
+                    <li><a href="javascript:;">コンテストアーカイブ国際版</a></li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">SCP-JPシリーズ</a>
+                  <ul>
+                    <li><a href="javascript:;">JPシリーズI(001-999)</a></li>
+                    <li><a href="javascript:;">JPシリーズII(1000-1999)</a>
+                    </li>
+                    <li><a href="javascript:;">JPシリーズIII(2000-2999)</a>
+                    </li>
+                    <li><a href="javascript:;">殿堂入りコレクション-JP</a>
+                    </li>
+                    <li><a href="javascript:;">ジョーク-JP</a></li>
+                    <li><a href="javascript:;">Archived SCP-JP</a>
+                    </li>
+                    <li><a href="javascript:;">Explained SCP-JP</a></li>
+                    <li><a href="javascript:;">Anomalousアイテム記録-JP</a>
+                    </li>
+                    <li><a href="javascript:;">超常現象記録-JP</a>
+                    </li>
+                    <li><a href="https://web.archive.orgjavascript:;">未解明領域記録-JP</a>
+                    </li>
+                    <li><a href="javascript:;">財団Tales-JP</a></li>
+                    <li><a href="javascript:;">カノンハブ-JP</a></li>
+                    <li><a href="javascript:;">連作ハブ-JP</a></li>
+                    <li><a href="javascript:;">GoIフォーマット-JP</a></li>
+                    <li><a href="javascript:;">合作-JP</a></li>
+                    <li><a href="javascript:;">コンテストアーカイブ-JP</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">SCP国際版</a>
+                  <ul>
+                    <li><a href="javascript:;">SCP-RU一覧</a></li>
+                    <li><a href="javascript:;">SCP-KO一覧</a></li>
+                    <li><a href="javascript:;">SCP-CNシリーズ-I</a></li>
+                    <li><a href="javascript:;">SCP-CNシリーズ-II</a></li>
+                    <li><a href="javascript:;">SCP-CNシリーズ-III</a></li>
+                    <li><a href="javascript:;">SCP-FR一覧</a></li>
+                    <li><a href="javascript:;">SCP-PL一覧</a></li>
+                    <li><a href="javascript:;">SCP-ES一覧</a></li>
+                    <li><a href="javascript:;">SCP-TH一覧</a></li>
+                    <li><a href="javascript:;">SCP-DE一覧</a></li>
+                    <li><a href="javascript:;">SCP-IT一覧</a></li>
+                    <li><a href="javascript:;">SCP-UA一覧</a></li>
+                    <li><a href="javascript:;">SCP-PT一覧</a></li>
+                    <li><a href="javascript:;">SCP-CZ一覧</a></li>
+                    <li><a href="javascript:;">SCP-ZH一覧</a></li>
+                    <li><a href="javascript:;">Tales-RU一覧</a></li>
+                    <li><a href="javascript:;">Tales-KO一覧</a></li>
+                    <li><a href="javascript:;">Tales-CN一覧</a></li>
+                    <li><a href="javascript:;">Tales-FR一覧</a></li>
+                    <li><a href="javascript:;">Tales-PL一覧</a></li>
+                    <li><a href="javascript:;">Tales-ES一覧</a></li>
+                    <li><a href="javascript:;">Tales-TH一覧</a></li>
+                    <li><a href="javascript:;">Tales-DE一覧</a></li>
+                    <li><a href="javascript:;">Tales-IT一覧</a></li>
+                    <li><a href="javascript:;">Tales-UA一覧</a></li>
+                    <li><a href="javascript:;">Tales-PT一覧</a></li>
+                    <li><a href="javascript:;">Tales-CZ一覧</a></li>
+                    <li><a href="javascript:;">Tales-ZH一覧</a></li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">SCPの世界観</a>
+                  <ul>
+                    <li><a href="javascript:;">財団とは</a></li>
+                    <li><a href="javascript:;">オブジェクトクラス</a></li>
+                    <li><a href="javascript:;">セキュリティ&amp;クリアランス</a>
+                    </li>
+                    <li><a href="javascript:;">要注意団体</a></li>
+                    <li><a href="javascript:;">セキュリティ施設</a>
+                    </li>
+                    <li><a href="javascript:;">機動部隊</a></li>
+                    <li><a href="javascript:;">要注意団体-JP</a></li>
+                    <li><a href="javascript:;">セキュリティ施設-JP</a>
+                    </li>
+                    <li><a href="javascript:;">機動部隊-JP</a></li>
+                    <li><a href="javascript:;">要注意領域-JP</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">ガイド</a>
+                  <ul>
+                    <li><a href="javascript:;">ガイドハブ</a></li>
+                    <li><a href="javascript:;">初めての方へ</a></li>
+                    <li><a href="javascript:;">記事を作成するには？</a>
+                    </li>
+                    <li><a href="javascript:;">チャット(Discord)ガイド</a>
+                    </li>
+                    <li><a href="javascript:;">FAQ</a></li>
+                    <li><a href="javascript:;">サイトルール</a></li>
+                    <li><a href="javascript:;">削除ガイドライン</a></li>
+                    <li><a href="javascript:;">スタッフ一覧</a></li>
+                    <li><a href="javascript:;">リンク集</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="mobile-top-bar">
+              <div class="open-menu">
+                <p><a href="#side-bar">≡</a></p>
+              </div>
+              <ul>
+                <li><a href="javascript:;">SCP記事</a>
+                  <ul>
+                    <li><a href="javascript:;">JPシリーズI 001-JP -
+                        999-JP</a></li>
+                    <li><a href="javascript:;">JPシリーズII 1000-JP -
+                        1999-JP</a></li>
+                    <li><a href="javascript:;">JPシリーズIII 2000-JP -
+                        2999-JP</a></li>
+                    <li><a href="javascript:;">殿堂入りコレクション-JP</a>
+                    </li>
+                    <li><a href="javascript:;">シリーズI 001 - 999</a></li>
+                    <li><a href="javascript:;">シリーズII 1000 - 1999</a></li>
+                    <li><a href="javascript:;">シリーズIII 2000 - 2999</a>
+                    </li>
+                    <li><a href="javascript:;">シリーズIV 3000 - 3999</a></li>
+                    <li><a href="javascript:;">シリーズV 4000 - 4999</a></li>
+                    <li><a href="javascript:;">シリーズVI 5000 - 5999</a></li>
+                    <li><a href="javascript:;">シリーズVII 6000 - 6999</a>
+                    </li>
+                    <li><a href="javascript:;">SCP国際版</a></li>
+                    <li><a href="javascript:;">Joke SCP</a></li>
+                    <li><a href="javascript:;">Archived SCP</a></li>
+                    <li><a href="javascript:;">Explained SCP</a></li>
+                    <li><a href="javascript:;">Anomalousアイテム記録</a>
+                    </li>
+                    <li><a href="javascript:;">超常現象記録</a>
+                    </li>
+                    <li><a href="javascript:;">未解明領域記録</a>
+                    </li>
+                    <li><a href="javascript:;">ジョーク-JP</a></li>
+                    <li><a href="javascript:;">Archived SCP-JP</a>
+                    </li>
+                    <li><a href="javascript:;">Explained SCP-JP</a></li>
+                    <li><a href="javascript:;">Anomalousアイテム記録-JP</a>
+                    </li>
+                    <li><a href="javascript:;">超常現象記録-JP</a>
+                    </li>
+                    <li><a href="https://web.archive.orgjavascript:;">未解明領域記録-JP</a>
+                    </li>
+                    <li><a href="javascript:;">事件ファイル</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">情報とライブラリ</a>
+                  <ul>
+                    <li><a href="javascript:;">Tales</a></li>
+                    <li><a href="javascript:;">カノンハブ</a></li>
+                    <li><a href="javascript:;">GoIフォーマット</a></li>
+                    <li><a href="javascript:;">コンテストアーカイブ国際版</a></li>
+                    <li><a href="javascript:;">Tales-JP</a></li>
+                    <li><a href="javascript:;">カノンハブ-JP</a></li>
+                    <li><a href="javascript:;">連作ハブ-JP</a></li>
+                    <li><a href="javascript:;">GoIフォーマット-JP</a></li>
+                    <li><a href="javascript:;">合作-JP</a></li>
+                    <li><a href="javascript:;">コンテストアーカイブ-JP</a>
+                    </li>
+                    <li><a href="javascript:;">財団とは</a></li>
+                    <li><a href="javascript:;">オブジェクトクラス</a></li>
+                    <li><a href="javascript:;">セキュリティ&amp;クリアランス</a>
+                    </li>
+                    <li><a href="javascript:;">要注意団体</a></li>
+                    <li><a href="javascript:;">セキュリティ施設</a>
+                    </li>
+                    <li><a href="javascript:;">機動部隊</a></li>
+                    <li><a href="javascript:;">要注意団体-JP</a></li>
+                    <li><a href="javascript:;">セキュリティ施設-JP</a>
+                    </li>
+                    <li><a href="javascript:;">機動部隊-JP</a></li>
+                    <li><a href="javascript:;">要注意領域-JP</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="login-status">
+            <span class="wj-user-info printuser">
+              <a class="wj-user-info-link" href="javascript:;">
+                <span class="wj-karma" data-karma="3">
+                  <svg class="wj-sprite sprite-wj-karma" viewBox="0 0 64 114">
+                    <use href="/files--static/media/ui.svg#wj-karma"></use>
+                  </svg>
+                </span>
+                <img class="wj-user-info-avatar small" src="/files--static/media/default-avatar.png" alt="Default">
+              </a>Default</span>
+
+            | <a id="my-account" href="javascript:;">My accounts</a> <a id="account-topbutton" href="javascript:;">▼</a>
+            <div id="account-options">
+              <ul>
+                <li><a href="javascript:;">account</a></li>
+                <li><a href="javascript:;">Private Messages</a></li>
+                <li><a href="javascript:;">my contacts</a></li>
+                <li><a href="javascript:;">notifications</a></li>
+                <li><a href="javascript:;">logout</a></li>
+              </ul>
+            </div>
+          </div>
           <div id="header-extra-div-1"><span></span></div>
           <div id="header-extra-div-2"><span></span></div>
           <div id="header-extra-div-3"><span></span></div>
@@ -257,8 +492,17 @@
             href="https://github.com/Zokhoi/vscode-ftml">vscode-ftml</a>)<br>
           Copyright (C) 2022- RTa-technology &amp; other ftml-web contributors.
         </div>
+        <div id="extrac-div-1"><span></span></div>
+        <div id="extrac-div-2"><span></span></div>
+        <div id="extrac-div-3"><span></span></div>
       </div>
     </div>
+    <div id="extra-div-1"><span></span></div>
+    <div id="extra-div-2"><span></span></div>
+    <div id="extra-div-3"><span></span></div>
+    <div id="extra-div-4"><span></span></div>
+    <div id="extra-div-5"><span></span></div>
+    <div id="extra-div-6"><span></span></div>
   </div>
 
 
