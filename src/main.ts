@@ -1,6 +1,8 @@
 import css from './css/wikidot.css';
 import init from './css/init.css';
-const ftmlWorker = new Worker("/src/bundle.js");
+import Worker from "./bundle.js?worker";
+const ftmlWorker = new Worker();
+
 // Workerスレッドから受信
 ftmlWorker.onmessage = (event: MessageEvent) => {
   document.querySelector("head > style#innercss")!.innerHTML = css;
