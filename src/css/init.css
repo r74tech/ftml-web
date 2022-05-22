@@ -8,14 +8,26 @@ body {
     padding: 5px;
     background: aliceblue;
 }
+#footer {
+    background: aliceblue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
 #main-content {
     margin: 0;
+}
+#page-content {
+    height: 91vh;
 }
 #preview {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 92vh;
+    overflow-y: auto;
 }
 #textarea-content-container, #preview-content-container {
     width: 50%;
