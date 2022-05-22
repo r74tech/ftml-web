@@ -1,11 +1,14 @@
 import css from './css/wikidot.css';
 import sigma from './css/sigma-9.css';
 import init from './css/init.css';
-import Worker from "./bundle.js?worker";
-const ftmlWorker = new Worker();
+import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
+
+let ftml = new Worker(ftmlWorker, {
+  type: 'module',
+});
 
 // Workerスレッドから受信
-ftmlWorker.onmessage = (event: MessageEvent) => {
+ftml.onmessage = (event: MessageEvent) => {
   document.querySelector("head > style#innercss")!.innerHTML = css;
   document.querySelector("head > style#sigma")!.innerHTML = sigma;
   document.querySelector("head > style#init")!.innerHTML = init;
@@ -26,5 +29,5 @@ textareaField.addEventListener('input', (event) => {
     return;
   }
   const value = target.value;
-  ftmlWorker.postMessage(value);
+  ftml.postMessage(value);
 });
