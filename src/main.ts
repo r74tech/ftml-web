@@ -95,10 +95,7 @@ editsaveButton.addEventListener('click', async () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  
-  // StorageからJSON文字列を取得し、それをパースして元の値を復元
-  const FtmlStrageItem = localStorage.getItem("FtmlStrage");
-  console.log(FtmlStrageItem);
+    const FtmlStrageItem = localStorage.getItem("FtmlStrage");
   if (FtmlStrageItem){
     const FtmlStrage = JSON.parse(FtmlStrageItem);
     edittitleField.value = FtmlStrage.title;
