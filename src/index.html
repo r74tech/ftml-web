@@ -12,45 +12,382 @@
   <style id="sigma"></style>
   <style id="innercss"></style>
   <style id="init"></style>
+  <style id="font"></style>
   <script type="module" src="./main.ts"></script>
 </head>
 
-<body>
-  <header>
-    Wikitext Previewer
-  </header>
-  
-  <div id="preview">
-    <div id="textarea-content-container">
-      <textarea id="textarea-content"></textarea>
-    </div>
-    <div id="preview-content-container">
-      <div id="preview-styles"></div>
-        <div id="skrollr-body">
-          <a name="page-top"></a>
-          <div id="container-wrap-wrap">
-            <div id="container-wrap">
-              <div id="container">
-                <div id="content-wrap">
-                  <div id="main-content">
-                    <div id="page-content">
-                      <div id="preview-content">loading...</div>
-                    </div>
-                  </div>
+<body id="skrollr-body">
+  <a name="page-top"></a>
+  <div id="container-wrap-wrap">
+    <div id="container-wrap">
+      <div id="container">
+        <div id="header">
+          <h1><a href="/" class="active"><span>Wikitext Previewer</span></a></h1>
+
+          <h2><span></span></h2>
+          <div id="header-extra-div-1"><span></span></div>
+          <div id="header-extra-div-2"><span></span></div>
+          <div id="header-extra-div-3"><span></span></div>
+        </div>
+        <div id="content-wrap">
+          <div id="side-bar">
+            <div class="side-block" style="background-color: #a7dba2;">
+              <div class="collapsible-block">
+                <div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">初めての方へ</a>
                 </div>
+              </div>
+            </div>
+            <hr>
+            <div class="side-block">
+              <div class="menu-item"><img
+                  src="/image/home.png"
+                  alt="home.png" class="image"><a href="javascript:;"
+                  class="active">メインページ</a></div>
+              <div class="heading">
+                <p>SCPデータベース</p>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズJP-III</a> <span
+                  class="sub-text">(2000-JP-2999-JP)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズJP-II</a> <span
+                  class="sub-text">(1000-JP-1999-JP)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズJP-I</a> <span
+                  class="sub-text">(001-JP-999-JP)</span></div>
+              <hr>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズVII</a> <span
+                  class="sub-text">(6000-6999)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズVI</a> <span
+                  class="sub-text">(5000-5999)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズV</a> <span
+                  class="sub-text">(4000-4999)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズIV</a> <span
+                  class="sub-text">(3000-3999)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズIII</a> <span
+                  class="sub-text">(2000-2999)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズII</a> <span
+                  class="sub-text">(1000-1999)</span></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">シリーズI</a> <span
+                  class="sub-text">(001-999)</span></div>
+              <div class="heading">
+                <p>SCPライブラリ</p>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">Tales-JP</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">カノン-JP</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">連作-JP</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">Tales</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">カノン</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">SCP国際版</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">GoIフォーマット一覧</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">GoIフォーマット-JP一覧</a></div>
+              <div class="menu-item"><img
+                  src="/image/series.png"
+                  alt="series.png" class="image"><a
+                  href="javascript:;">GoIフォーマット国際版</a></div>
+              <div class="heading">
+                <p>サイト</p>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/main.png"
+                  alt="main.png" class="image"><a
+                  href="javascript:;">最近の更新</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">最近作成された記事</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">最近編集された記事</a></div>
+              <div class="menu-item"><img
+                  src="/image/main.png"
+                  alt="main.png" class="image"><a
+                  href="javascript:;">ランダムページ</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">評価の高い記事</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">評価の低い記事</a></div>
+              <hr>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">評価の高い記事-EN</a></div>
+              <div class="heading">
+                <p>コミュニティ</p>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/help.png"
+                  alt="help.png" class="image"><a
+                  href="javascript:;">ガイド</a><br>
+                <img
+                  src="/image/help.png"
+                  alt="help.png" class="image"><a
+                  href="javascript:;">お役立ちリンク集</a>
+              </div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">著者ページ-JP</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">著者ページ国際版</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">アートワーク-JP</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">アートワーク国際版</a></div>
+              <div class="menu-item"><img
+                  src="/image/forum.png"
+                  alt="forum.png" class="image"><a
+                  href="javascript:;">フォーラム</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">最近の投稿</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">最近の下書き批評</a>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/forum.png"
+                  alt="forum.png" class="image"><a
+                  href="javascript:;">チャット(Discord)</a></div>
+              <div class="menu-item sub-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">スタッフ一覧</a>
+              </div>
+              <div class="heading">
+                <p>執筆</p>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/help.png"
+                  alt="help.png" class="image"><a
+                  href="javascript:;">記事を作成するには？</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">タグガイド</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">タグリスト</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">Wikidotシンタックス</a></div>
+              <div class="heading">
+                <p>リンク</p>
+              </div>
+              <div class="menu-item"><img
+                  src="/image/home.png"
+                  alt="home.png" class="image"><a
+                  href="javascript:;">SCP
+                  Foundation</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;"
+                  target="_blank">財団日本支部理事会</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">リンク一覧</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;"
+                  target="_blank">SCP-INT</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;"
+                  target="_blank">ファイルストレージ</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;"
+                  target="_blank">サンドボックスⅢ</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image">（<a
+                  href="javascript:;"
+                  target="_blank">サンドボックス</a>）</div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image">（<span style="text-decoration: line-through;"><a
+                    href="javascript:;"
+                    target="_blank">旧サンドボックス</a></span>）</div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a href="javascript:;"
+                  target="_blank">ScpperDB</a></div>
+              <div class="menu-item"><img
+                  src="/image/default.png"
+                  alt="default.png" class="image"><a
+                  href="javascript:;">SCP-JP
+                  運営Discord</a></div>
+            </div>
+            <hr>
+            <div class="side-block sns" style="background-color: #e5e5ff;">
+              <div class="menu-item">
+                <div style="display: flex; align-items: flex-start; justify-content: center;"><a
+                    href="javascript:;"
+                    target="_blank"><img
+                      src="/image/Twitter-icon-50.png"
+                      title="SCP-JP Twitter" style="width:40px; height:40px;" alt="Twitter-icon-50.png"
+                      class="image"></a><a
+                    href="javascript:;"><img
+                      src="/image/discord_icon.png"
+                      title="SCP-JP Discord Chat" style="width:37px; height:37px;" alt="discord_icon.png"
+                      class="image"></a></div>
+              </div>
+            </div>
+            <div class="side-block" style="background-color: #fff0f0;">
+              <div class="collapsible-block">
+                <div class="collapsible-block-folded"><a class="collapsible-block-link" href="javascript:;">管理</a></div>
+              </div>
+            </div>
+            <div class="side-block" style="background-color: #f0f0f0;">
+              <div style="text-align: center;">
+                <p><span style="font-size:80%;">© SCP財団<br>
+                    <a href="javascript:;">クレジット</a> | <a
+                      href="javascript:;">ライセンス</a> | <a
+                      href="javascript:;">問い合わせ</a></span></p>
+              </div>
+            </div>
+            <div class="scpnet-interwiki-wrapper">
+              <div class="list-pages-box">
+                <div class="list-pages-item">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div style="clear:both; height: 0px; font-size: 1px"></div>
+            <a class="close-menu" href="javascript:;"><br>
+              <img
+                src="/image/black.png"
+                style="z-index:-1; opacity: 0.3;" alt="black.png" class="image"><br></a>
+          </div>
+          <div id="main-content">
+            <div id="page-title"></div>
+            <div id="page-content">
+              loading...
+            </div>
+            <div id="page-info-break">
+              <div id="page-styles"></div>
+            </div>
+            <div id="action-area" style="display: block;">
+              <h1>Edit Page</h1>
+              <div>
+                <form id="edit-page-form">
+                  <table class="form" style="margin: 0.5em auto 1em 0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          Page title:
+                        </td>
+                        <td>
+                          <input class="text" id="edit-page-title" name="title" type="text" size="35" maxlength="128"
+                            style="font-weight: bold; font-size: 130%;">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <textarea id="edit-page-textarea" name="source" rows="20" cols="60" style="width: 95%;"></textarea>
+                  </div>
+                  <div class="buttons alignleft">
+                    <input type="button" name="save" id="edit-save-button" class="btn btn-primary" value="Save">
+                </div>
+                  <details>
+                    <summary>Advanced Settings</summary>
+                    <h2>Edit Sidebar</h2>
+                    <div>
+                      <textarea id="edit-side-textarea" name="source" rows="20" cols="60"
+                        style="width: 95%;"></textarea>
+                    </div>
+                  </details>
+
+                </form>
               </div>
             </div>
           </div>
         </div>
+        <div id="license-area">
+          Wikitext Previewer is developed and maintained by <a href="https://github.com/RTa-technology"
+            target="_blank">RTa-technology</a>. <a href="https://github.com/RTa-scp/ftml-web" target="_blank">Code</a> License: <a
+            href="https://www.gnu.org/licenses/" target="_blank">AGPL-3.0 license</a><br>
+          Copyright (C) 2022- Zokhoi &amp; other vscode-ftml contributors (<a
+              href="https://github.com/Zokhoi/vscode-ftml">vscode-ftml</a>)<br>
+          Copyright (C) 2022- RTa-technology &amp; other ftml-web contributors.
+        </div>
       </div>
     </div>
-            <footer>
-              Wikitext Previewer is developed and maintained by <a href="https://github.com/RTa-technology" target="_blank">RTa-technology</a>.<br>
-              <a href="https://github.com/RTa-scp/ftml-web" target="_blank">Code</a> License: <a href="https://www.gnu.org/licenses/" target="_blank">AGPL-3.0 license</a>
-              <p dir="auto">Copyright (C) 2022- Zokhoi &amp; other vscode-ftml contributors (<a href="https://github.com/Zokhoi/vscode-ftml">vscode-ftml</a>)</p>
-              <p dir="auto">Copyright (C) 2022- RTa-technology &amp; other ftml-web contributors.</p>
-            </footer>
-          
+  </div>
+
+
 </body>
 
 </html>
