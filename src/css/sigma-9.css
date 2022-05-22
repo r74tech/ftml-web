@@ -110,7 +110,7 @@ body {
 }
 
 div#container-wrap {
-    background: url(https://scp-jp.wdfiles.com/local--files/component:theme/body_bg.png) top left repeat-x;
+    background: url(./body_bg.png) top left repeat-x;
 }
 
 /* HEADER */
@@ -119,7 +119,6 @@ div#container-wrap {
     position: relative;
     z-index: 10;
     padding-bottom: 22px; /* FOR MENU */
-    background: url(https://scp-jp.wdfiles.com/local--files/component:theme/logo.png) 10px 40px no-repeat;
 }
 
 #search-top-box {
@@ -218,7 +217,6 @@ div#container-wrap {
     max-height: 0px;
     color: #eee;
     background: transparent;
-    font-family: BauhausLTDemi, Arial, sans-serif;
     font-size: 180%;
     text-decoration: none;
     text-shadow: 3px 3px 5px #000;
@@ -412,7 +410,7 @@ div#container-wrap {
 }
 
 #side-bar .collapsible-block-folded {
-    background: url(https://scp-jp.wdfiles.com/local--files/nav:side/expand.png) 0 2px no-repeat;
+    background: url(../image/expand.png) 0 2px no-repeat;
 }
 
 #side-bar .collapsible-block-link {

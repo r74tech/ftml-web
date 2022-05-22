@@ -1,7 +1,0 @@
-div#container-wrap {
-    background-image: url(./body_bg.png);
-}
-
-#side-bar .collapsible-block-folded {
-    background: url(../image/expand.png) 0 2px no-repeat;
-}

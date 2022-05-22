@@ -1,7 +1,6 @@
 import css from './css/wikidot.css';
 import sigma from './css/sigma-9.css';
 import init from './css/init.css';
-import font from './css/font-bauhaus.css';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
 let ftml = new Worker(ftmlWorker, {
