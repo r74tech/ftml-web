@@ -1,6 +1,12 @@
 body {
     margin: 0;
 }
+#header {
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    background: aliceblue;
+}
 #preview {
     display: flex;
     flex-wrap: wrap;
