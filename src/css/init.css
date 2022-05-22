@@ -22,11 +22,11 @@
     vertical-align: top;
 }
 :root {
-    --wj-karma-5: rgb(255, 64, 0);
-    --wj-karma-4: rgb(255, 128, 0);
-    --wj-karma-3: rgb(0, 255, 64);
-    --wj-karma-2: rgb(0, 128, 255);
-    --wj-karma-1: rgb(0, 64, 255);
+    --wj-karma-5: rgb(255, 45, 45);
+    --wj-karma-4: rgb(236, 129, 14);
+    --wj-karma-3: rgb(255, 242, 14);
+    --wj-karma-2: rgb(97, 243, 40);
+    --wj-karma-1: rgb(97, 243, 167);
     --wj-karma-n: rgb(64, 64, 64);
 }
 .wj-karma {
