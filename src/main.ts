@@ -1,16 +1,10 @@
 import css from './css/wikidot.css';
-// import  MyWorker from "/src/worker?worker";
+import init from './css/init.css';
 const ftmlWorker = new Worker("/src/bundle.js");
-// import ftmlWorker from '/src/bundle.js?bundled-worker&dataurl';
-
-// const worker = new MyWorker();
-
-// import { setListeners } from "./listeners";
-
   // Workerスレッドから受信
   ftmlWorker.onmessage = (event: MessageEvent) => {
-    console.log(event.data);
-    document.querySelector("head > style:nth-child(5)")!.innerHTML=css;
+    document.querySelector("head > style#innercss")!.innerHTML=css;
+    document.querySelector("head > style#init")!.innerHTML=init;
     const { html, styles } = event.data;
 
     const previewStyles = document.getElementById('preview-styles')!;
@@ -18,7 +12,7 @@ const ftmlWorker = new Worker("/src/bundle.js");
     previewContent.innerHTML = html;
   };
 
-  const textareaField = document.getElementById('page-content')!;
+  const textareaField = document.getElementById('textarea-content')!;
 
   textareaField.addEventListener('input', (event) => {
     const { target } = event;
@@ -28,6 +22,6 @@ const ftmlWorker = new Worker("/src/bundle.js");
       return;
     }
   
-    const value = target.value; // 👍
+    const value = target.value;
     ftmlWorker.postMessage(value);
   });

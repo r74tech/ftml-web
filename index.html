@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wikitext Preview</title>
-    <style>
-    </style>
+    <style id="innercss"></style>
+    <style id="init"></style>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <textarea id="page-content"></textarea>
-  <div id="preview-styles"></div>
-  <div id="preview-content">loading...</div>
+  <div id="skrollr-body">
+    <a name="page-top"></a>
+    <div id="container-wrap-wrap">
+      <div id="container-wrap">
+        <div id="container">
+          <div id="content-wrap">
+            <div id="main-content">
+              <div id="page-content">
+                <div id="preview">
+                  <div id="textarea-content-container">
+                    <textarea id="textarea-content" ></textarea>
+                  </div>
+                  <div id="preview-content-container">
+                    <div id="preview-styles"></div>
+                    <div id="preview-content">loading...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
   </body>
   </html>

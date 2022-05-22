@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+#preview {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 92vh;
+}
+#textarea-content-container, #preview-content-container {
+    width: 50%;
+}
+textarea#textarea-content {
+    width: 98%;
+    box-sizing: border-box;
+    height: 100%;
+}
+@media screen and (max-width: 979px) {
+    #textarea-content-container, #preview-content-container {
+        width: 100%;
+        height: 45vh;
+        padding: 8px;
+    }
+    #preview-content-container {
+        overflow-y: scroll;
+    }
+}
