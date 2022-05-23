@@ -31,7 +31,8 @@ module.exports = {
     rollupOptions: {
       input: {
         main: resolve(__dirname, root, 'index.html'),
-        test: resolve(__dirname, root, 'test/index.html')
+        test: resolve(__dirname, root, 'test/index.html'),
+        test1: resolve(__dirname, root, 'test1/index.html')
       }
     },
     assetsDir: '.',
