@@ -1,98 +1,98 @@
 .wj-clear-float-both {
-    clear : both;
+    clear: both;
 }
 
 table.wiki-content-table, table.wj-table {
-    border-collapse : collapse;
-    border-spacing : 0;
-    margin : .5em auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: .5em auto;
 }
 table.wiki-content-table td, table.wj-table td {
-    border : 1px solid #666666;
-    padding : .3em .7em;
+    border: 1px solid #666666;
+    padding: .3em .7em;
 }
 table.wiki-content-table th, table.wj-table th {
-    border : 1px solid #666666;
-    padding : .3em .7em;
-    background-color : #333333;
+    border: 1px solid #666666;
+    padding: .3em .7em;
+    background-color: #333333;
 }
 
 .wj-align-center {
-    text-align : center;
+    text-align: center;
 }
 .wj-align-left {
-    text-align : left;
+    text-align: left;
 }
 .wj-align-right {
-    text-align : right;
+    text-align: right;
 }
 .wj-align-justify {
-    text-align : justify;
+    text-align: justify;
 }
 
 
 #toc {
-    margin : 1em auto 1em 0;
-    padding : 0 .5em;
-    border : 1px dashed gray;
-    background-color : #f7f7f7;
-    display : table;
+    margin: 1em auto 1em 0;
+    padding: 0 .5em;
+    border: 1px dashed gray;
+    background-color: #f7f7f7;
+    display: table;
 }
 
 #toc .title {
-    font-weight : bold;
-    margin : .2em 0  ;
-    padding : 0 2em;
-    text-align : center;
+    font-weight: bold;
+    margin: .2em 0  ;
+    padding: 0 2em;
+    text-align: center;
 }
 
 #toc #toc-action-bar {
-    padding : 2px;
+    padding: 2px;
 }
 
 #toc-list {
-    margin : .5em 0;
+    margin: .5em 0;
 }
 #toc.floatright {
-    float : right;
-    margin : 1em;
+    float: right;
+    margin: 1em;
 }
 #toc.floatleft {
-    float : left;
-    margin : 1em;
+    float: left;
+    margin: 1em;
 }
 
 .code, code {
-    border : 1px dashed #999999;
-    background-color : #333333;
-    font-family : "Andale Mono", "Courier New", Courier, monospace;
-    padding : 0 .7em;
-    margin : 1em 0;
-    overflow : auto;
+    border: 1px dashed #999999;
+    background-color: #333333;
+    font-family: "Andale Mono", "Courier New", Courier, monospace;
+    padding: 0 .7em;
+    margin: 1em 0;
+    overflow: auto;
 }
 
 
 .footnote .f-heading, .equation .e-heading, .reference .r-heading {
-    font-weight : bold;
+    font-weight: bold;
 }
 .footnote .f-content, .reference .r-content {
-    margin : .5em 0;
+    margin: .5em 0;
 }
 .footnote .f-footer, .equation .e-footer, .reference .r-footer {
-    font-size : 90%;
+    font-size: 90%;
 }
 
 .footnotes-footer {
-    margin : 0;
-    padding : .5em 0;
+    margin: 0;
+    padding: .5em 0;
     /*border-top: 1px solid #CCC;*/
-    height : 1%;
+    height: 1%;
 }
 .footnotes-footer .title {
-    margin : .5em 0;
-    font-size : 130%;
-    font-weight : bold;
+    margin: .5em 0;
+    font-size: 130%;
+    font-weight: bold;
 }
 a.footnoteref {
-    display : inline-block;
+    display: inline-block;
 }
