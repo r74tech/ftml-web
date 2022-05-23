@@ -21,19 +21,19 @@ ftml.onmessage = (event: MessageEvent) => {
     pageContent.innerHTML = html;
   } else if (type == 'side') {
     sideContent.innerHTML = html;
-  }  else if (type == 'top') {
+  } else if (type == 'top') {
     sideContent.innerHTML = html;
   } else {
     pageContent.innerHTML = html;
   }
   if (styles.length > 0) {
-    pageStyles.innerHTML = styles.map((v:string) => `<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
+    pageStyles.innerHTML = styles.map((v: string) => `<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
   }
 };
 
-const editpageField: HTMLInputElement =<HTMLInputElement>document.getElementById('edit-page-textarea')!;
-const edittitleField: HTMLInputElement =<HTMLInputElement>document.getElementById('edit-page-title')!;
-const editsideField: HTMLInputElement =<HTMLInputElement>document.getElementById('edit-side-textarea')!;
+const editpageField: HTMLInputElement = <HTMLInputElement>document.getElementById('edit-page-textarea')!;
+const edittitleField: HTMLInputElement = <HTMLInputElement>document.getElementById('edit-page-title')!;
+const editsideField: HTMLInputElement = <HTMLInputElement>document.getElementById('edit-side-textarea')!;
 const editsaveButton = document.getElementById('edit-save-button')!;
 
 editpageField.addEventListener('input', (event) => {
@@ -43,7 +43,7 @@ editpageField.addEventListener('input', (event) => {
   }
   const value = target.value;
   const type = "page"
-  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
   localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
   ftml.postMessage({ value: value, type: type });
 });
@@ -55,7 +55,7 @@ editsideField.addEventListener('input', (event) => {
   }
   const value = target.value;
   const type = "side"
-  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
   localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
   ftml.postMessage({ value: value, type: type });
 });
@@ -67,7 +67,7 @@ edittitleField.addEventListener('input', (event) => {
   }
   const value = target.value;
   document.querySelector("#page-title")!.innerHTML = value;
-  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
   localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
 });
 
@@ -92,7 +92,7 @@ editsaveButton.addEventListener('click', async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const FtmlStorageItem = localStorage.getItem("FtmlStorage");
-  if (FtmlStorageItem){
+  if (FtmlStorageItem) {
     const FtmlStorage = JSON.parse(FtmlStorageItem);
     edittitleField.value = FtmlStorage.title;
     editpageField.value = FtmlStorage.page;
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   const FtmlStrageItem = localStorage.getItem("FtmlStrage");
-  if (FtmlStrageItem){
+  if (FtmlStrageItem) {
     localStorage.removeItem("FtmlStrage");
   }
 });
