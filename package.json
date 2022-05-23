@@ -11,5 +11,8 @@
 		"sass": "^1.52.1",
 		"typescript": "^4.6.4",
 		"vite": "^2.9.9"
+	},
+	"devDependencies": {
+		"@types/wicg-file-system-access": "^2020.9.5"
 	}
 }

@@ -3,9 +3,6 @@ import sigma from './css/sigma-9.css';
 import init from './css/init.css';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
-
-type FtmlStorage = { title: string, page: string, side: string};
-
 let ftml = new Worker(ftmlWorker, {
   type: 'module',
 });
@@ -30,13 +27,13 @@ ftml.onmessage = (event: MessageEvent) => {
     pageContent.innerHTML = html;
   }
   if (styles.length > 0) {
-    pageStyles.innerHTML = styles.map(v => `<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
+    pageStyles.innerHTML = styles.map((v:string) => `<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
   }
 };
 
-const editpageField = document.getElementById('edit-page-textarea')!;
-const edittitleField = document.getElementById('edit-page-title')!;
-const editsideField = document.getElementById('edit-side-textarea')!;
+const editpageField: HTMLInputElement =<HTMLInputElement>document.getElementById('edit-page-textarea')!;
+const edittitleField: HTMLInputElement =<HTMLInputElement>document.getElementById('edit-page-title')!;
+const editsideField: HTMLInputElement =<HTMLInputElement>document.getElementById('edit-side-textarea')!;
 const editsaveButton = document.getElementById('edit-save-button')!;
 
 editpageField.addEventListener('input', (event) => {
