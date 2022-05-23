@@ -325,9 +325,9 @@ div#container-wrap {
 }
 
 /* IE7 HACK */
-#top-bar ul > li > ul {
+/* #top-bar ul > li > ul {
     margin-top: -4px;
-}
+} */
 
 /* SIDE MENU */
 #side-bar {
