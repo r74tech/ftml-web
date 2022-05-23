@@ -5,10 +5,11 @@ const crossPlatform = require(resolve(__dirname, './plugins/vite-plugin-cross-pl
  * @type {import('vite').UserConfig}
  * @see https://vitejs.dev/config/
  */
+const root = join(process.cwd(), './src');
 module.exports = {
   mode: process.env.MODE,
   base: './',
-  root: join(process.cwd(), './src'),
+  root: root,
   publicDir: "./files--static",
   server: {
     port: 1212,
@@ -27,6 +28,12 @@ module.exports = {
     minify: process.env.MODE === 'development' ? false : 'terser',
     base: '',
     outDir: join(process.cwd(), 'dist'),
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, root, 'index.html'),
+        test: resolve(__dirname, root, 'test/index.html')
+      }
+    },
     assetsDir: '.',
     emptyOutDir: true,
     sourcemap: true,
