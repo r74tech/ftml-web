@@ -4,7 +4,7 @@ import init from './css/init.css';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
 
-type FtmlStrage = { title: string, page: string, side: string};
+type FtmlStorage = { title: string, page: string, side: string};
 
 let ftml = new Worker(ftmlWorker, {
   type: 'module',
@@ -46,8 +46,8 @@ editpageField.addEventListener('input', (event) => {
   }
   const value = target.value;
   const type = "page"
-  const FtmlStrageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
-  localStorage.setItem("FtmlStrage", JSON.stringify(FtmlStrageItem));
+  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
   ftml.postMessage({ value: value, type: type });
 });
 
@@ -58,8 +58,8 @@ editsideField.addEventListener('input', (event) => {
   }
   const value = target.value;
   const type = "side"
-  const FtmlStrageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
-  localStorage.setItem("FtmlStrage", JSON.stringify(FtmlStrageItem));
+  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
   ftml.postMessage({ value: value, type: type });
 });
 
@@ -70,8 +70,8 @@ edittitleField.addEventListener('input', (event) => {
   }
   const value = target.value;
   document.querySelector("#page-title")!.innerHTML = value;
-  const FtmlStrageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
-  localStorage.setItem("FtmlStrage", JSON.stringify(FtmlStrageItem));
+  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value};
+  localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
 });
 
 editsaveButton.addEventListener('click', async () => {
@@ -94,22 +94,22 @@ editsaveButton.addEventListener('click', async () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const FtmlStrageItem = localStorage.getItem("FtmlStrage");
-  if (FtmlStrageItem){
-    const FtmlStrage = JSON.parse(FtmlStrageItem);
-    edittitleField.value = FtmlStrage.title;
-    editpageField.value = FtmlStrage.page;
-    editsideField.value = FtmlStrage.side;
-    if (FtmlStrage.page) {
+    const FtmlStorageItem = localStorage.getItem("FtmlStorage");
+  if (FtmlStorageItem){
+    const FtmlStorage = JSON.parse(FtmlStorageItem);
+    edittitleField.value = FtmlStorage.title;
+    editpageField.value = FtmlStorage.page;
+    editsideField.value = FtmlStorage.side;
+    if (FtmlStorage.page) {
       const type = "page"
-      ftml.postMessage({ value: FtmlStrage.page, type: type });
+      ftml.postMessage({ value: FtmlStorage.page, type: type });
     }
-    if (FtmlStrage.side) {
+    if (FtmlStorage.side) {
       const type = "side"
-      ftml.postMessage({ value: FtmlStrage.side, type: type });
+      ftml.postMessage({ value: FtmlStorage.side, type: type });
     }
-    if (FtmlStrage.title) {
-      document.querySelector("#page-title")!.innerHTML = FtmlStrage.title;
+    if (FtmlStorage.title) {
+      document.querySelector("#page-title")!.innerHTML = FtmlStorage.title;
     }
   }
 });
