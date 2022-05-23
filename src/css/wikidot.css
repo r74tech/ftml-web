@@ -10,14 +10,14 @@ table.wj-table {
 }
 table.wiki-content-table td,
 table.wj-table td {
-	border: 1px solid #888;
+	border: 1px solid #666;
 	padding: 0.3em 0.7em;
 }
 table.wiki-content-table th,
 table.wj-table th {
-	border: 1px solid #888;
+	border: 1px solid #666;
 	padding: 0.3em 0.7em;
-	background-color: #EEE;
+	background-color: #333;
 }
 
 .wj-align-center {
