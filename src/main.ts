@@ -2,6 +2,7 @@ import css from './css/wikidot.css';
 import sigma from './css/sigma-9.css';
 import init from './css/init.css';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
+import ftmlComponentsCSS from './ftml-components/index.scss';
 
 let ftml = new Worker(ftmlWorker, {
   type: 'module',
@@ -10,6 +11,7 @@ let ftml = new Worker(ftmlWorker, {
 document.querySelector("head > style#innercss")!.innerHTML = css;
 document.querySelector("head > style#sigma")!.innerHTML = sigma;
 document.querySelector("head > style#init")!.innerHTML = init;
+document.querySelector("head > style#ftmlcomponents")!.innerHTML = ftmlComponentsCSS;
 
 // Workerスレッドから受信
 ftml.onmessage = (event: MessageEvent) => {
