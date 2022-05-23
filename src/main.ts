@@ -10,10 +10,6 @@ let ftml = new Worker(ftmlWorker, {
   type: 'module',
 });
 
-document.querySelector("head > style#innercss")!.innerHTML = css;
-document.querySelector("head > style#sigma")!.innerHTML = sigma;
-document.querySelector("head > style#init")!.innerHTML = init;
-
 // Workerスレッドから受信
 ftml.onmessage = (event: MessageEvent) => {
   const { html, styles, type } = event.data;
