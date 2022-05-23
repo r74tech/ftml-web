@@ -94,7 +94,7 @@ editsaveButton.addEventListener('click', async () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const FtmlStorageItem = localStorage.getItem("FtmlStorage");
+  const FtmlStorageItem = localStorage.getItem("FtmlStorage");
   if (FtmlStorageItem){
     const FtmlStorage = JSON.parse(FtmlStorageItem);
     edittitleField.value = FtmlStorage.title;
@@ -111,5 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (FtmlStorage.title) {
       document.querySelector("#page-title")!.innerHTML = FtmlStorage.title;
     }
+  }
+  const FtmlStrageItem = localStorage.getItem("FtmlStrage");
+  if (FtmlStrageItem){
+    localStorage.removeItem("FtmlStrage");
   }
 });
