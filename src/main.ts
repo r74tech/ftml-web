@@ -18,13 +18,13 @@ ftml.onmessage = (event: MessageEvent) => {
   const pageContent = document.getElementById('page-content')!;
   const sideContent = document.getElementById('side-bar')!;
   if (type == 'page') {
-    pageContent.innerHTML = html;
+    pageContent.innerHTML = html.replace("\<wj-body class=\"wj-body\"\>","").replace("\<\/wj-body\>","");
   } else if (type == 'side') {
-    sideContent.innerHTML = html;
+    sideContent.innerHTML = html.replace("\<wj-body class=\"wj-body\"\>","").replace("\<\/wj-body\>","");
   } else if (type == 'top') {
-    sideContent.innerHTML = html;
+    sideContent.innerHTML = html.replace("\<wj-body class=\"wj-body\"\>","").replace("\<\/wj-body\>","");
   } else {
-    pageContent.innerHTML = html;
+    pageContent.innerHTML = html.replace("\<wj-body class=\"wj-body\"\>","").replace("\<\/wj-body\>","");
   }
   if (styles.length > 0) {
     pageStyles.innerHTML = styles.map((v: string) => `<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
