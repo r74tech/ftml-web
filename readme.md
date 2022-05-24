@@ -1,4 +1,5 @@
 # FTML/Wikidot Web Previewer
+![](https://img.shields.io/github/workflow/status/RTa-scp/ftml-web/deploy?style=flat-square)  
 A WebApp to preview FTML, the SCP Foundation's markup language, on the Web.
 
 ## Development
