@@ -110,7 +110,7 @@ body {
 }
 
 div#container-wrap {
-    background: url(./body_bg.png) top left repeat-x;
+    background: url(../image/body_bg.png) top left repeat-x;
 }
 
 /* HEADER */

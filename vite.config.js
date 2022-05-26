@@ -10,7 +10,7 @@ module.exports = {
   mode: process.env.MODE,
   base: './',
   root: root,
-  publicDir: "./files--static",
+  publicDir: "./public",
   server: {
     port: 1212,
     fs: {
@@ -31,7 +31,10 @@ module.exports = {
     rollupOptions: {
       input: {
         main: resolve(__dirname, root, 'index.html'),
-      }
+      },
+      external: [
+        /^virtual:.*/,
+      ]
     },
     assetsDir: '.',
     emptyOutDir: true,
