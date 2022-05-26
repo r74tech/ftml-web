@@ -1,0 +1,12 @@
+actionarea:
+  title: "Edit Page"
+  titleinput: "Page title"
+  message:
+    - "Wikitextをリアルタイムに反映します。"
+    - "自動バックアップが可能です。"
+    - "Saveボタンでファイルを保存します。"
+    - "サイドバーの表示は、Advanced Settingsから変更可能です。"
+  save: "save"
+  advancedsettings: "Advanced Settings"
+  advancedsettingstitle: "Edit Sidebar"
+  langselect: "言語: "

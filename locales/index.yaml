@@ -1,0 +1,16 @@
+default:
+  en: "English"
+  ja: "Japanese"
+  cn: "Chinese"
+en:
+  en: "English"
+  ja: "Japanese"
+  cn: "Chinese"
+ja:
+  en: "英語"
+  ja: "日本語"
+  cn: "中国語"
+cn:
+  en: "英语"
+  ja: "日语"
+  cn: "汉语"
