@@ -8,14 +8,13 @@
 	},
 	"dependencies": {
 		"@types/node": "^17.0.35",
+		"@types/wicg-file-system-access": "^2020.9.5",
 		"@vscode-ftml/ftml-wasm": "^1.16.2",
 		"esbuild": "^0.14.39",
 		"eslint": "^8.16.0",
 		"sass": "^1.52.1",
 		"typescript": "^4.6.4",
-		"vite": "^2.9.9"
-	},
-	"devDependencies": {
-		"@types/wicg-file-system-access": "^2020.9.5"
+		"vite": "^2.9.9",
+		"yaml": "^2.1.0"
 	}
 }

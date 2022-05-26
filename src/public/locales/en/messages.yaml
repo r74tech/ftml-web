@@ -1,0 +1,12 @@
+actionarea:
+  title: "Edit Page"
+  titleinput: "Page title"
+  message:
+    - "Wikitext is previewed in real time."
+    - "Automatic backup is enabled."
+    - "Save button to save the file."
+    - "The display of Sidebar can be changed from Advanced Settings."
+  save: "save"
+  advancedsettings: "Advanced Settings"
+  advancedsettingstitle: "Edit Sidebar"
+  langselect: "Language: "

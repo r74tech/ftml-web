@@ -1,0 +1,12 @@
+actionarea:
+  title: "编辑"
+  titleinput: "页面标题"
+  message:
+    - "Wikitext是实时预览的。"
+    - "自动备份已启用。"
+    - "保存按钮来保存文件。"
+    - "侧边栏的显示可以从高级设置中改变。"
+  save: "保存"
+  advancedsettings: "高级设置"
+  advancedsettingstitle: "编辑边栏"
+  langselect: "语言："
