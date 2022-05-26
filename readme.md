@@ -31,3 +31,6 @@ You should have received a copy of the GNU Affero General Public License along w
 
 ## Acknowledgments 
 * [Zokhoi/vscode-ftml](https://github.com/Zokhoi/vscode-ftml)
+
+
+The development version is available at [ftml-web-dev](https://github.com/RTa-scp/ftml-web-dev)
