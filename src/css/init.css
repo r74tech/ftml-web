@@ -64,3 +64,6 @@
 .printuser img.small {
     padding: 1px 9px 1px 0;
 }
+.wj-image-container {
+    display: initial;
+}
