@@ -29,13 +29,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
 
 ## Translate
-
 If you want to help translating Locale Emulator, you can find all strings in
 
  -  [`index.yaml`](/src/public/locales/index.yaml) in [`src/public/locales/`](/src/public/locales/) folder.
  -  `message.yaml`, `side.ftml`, `top.ftml` in [`src/public/locales/lang`](/src/public/locales/) folder.
 
 After you translated the above files into your language, please inform me by creating a pull request.
+
 
 ## Acknowledgments 
 * [Zokhoi/vscode-ftml](https://github.com/Zokhoi/vscode-ftml)
