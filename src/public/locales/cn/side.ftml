@@ -193,7 +193,11 @@ SCP图书馆
 [[[licensing-guide|授权指南]]][[/size]]
 [[/=]]
 [[/div]]
+~~~~
 
+[[a href="###" class="close-menu"]]
+[[image https://sigma9.zokhoi.com/cn/img/black.png style="z-index=-1; opacity: 0.3;"]]
+[[/a]]
 [[module css]]
 .wj-image-container {
     display: initial;
