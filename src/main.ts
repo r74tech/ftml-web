@@ -1,6 +1,6 @@
 import css from './css/wikidot.css';
-import sigma from './css/sigma-9.css';
 import init from './css/init.css';
+import collapsible from './css/collapsible.css';
 import YAML from 'yaml'
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
@@ -9,7 +9,7 @@ let ftml = new Worker(ftmlWorker, {
 });
 
 document.querySelector("head > style#innercss")!.innerHTML = css;
-document.querySelector("head > style#sigma")!.innerHTML = sigma;
+document.querySelector("head > style#collapsible")!.innerHTML = collapsible;
 document.querySelector("head > style#init")!.innerHTML = init;
 
 // Workerスレッドから受信
@@ -36,6 +36,7 @@ ftml.onmessage = (event: MessageEvent) => {
 async function loadlocales(lang: string = 'en') {
   const sideftml = await fetch(`./locales/${lang}/side.ftml`).then(v => v.text());
   const topftml = await fetch(`./locales/${lang}/top.ftml`).then(v => v.text());
+  const theme = await fetch(`./locales/${lang}/theme.css`).then(v => v.text());
   const messages = YAML.parse(await fetch(`./locales/${lang}/messages.yaml`).then(v => v.text()));
   for (const key in messages.actionarea) {
     let messagevalue = messages.actionarea[key];
@@ -51,6 +52,7 @@ async function loadlocales(lang: string = 'en') {
     }
   }
   readlang(lang);
+  document.querySelector("head > style#theme")!.innerHTML = theme;
   ftml.postMessage({ value: sideftml, type: "side" });
   ftml.postMessage({ value: topftml, type: "top" });
 }

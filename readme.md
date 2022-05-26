@@ -34,6 +34,35 @@ If you want to help translating Locale Emulator, you can find all strings in
  -  [`index.yaml`](/src/public/locales/index.yaml) in [`src/public/locales/`](/src/public/locales/) folder.
  -  `message.yaml`, `side.ftml`, `top.ftml` in [`src/public/locales/lang`](/src/public/locales/) folder.
 
+`top.ftml`
+```ftml
+[[ul]]
+[[li]][# Rules][[ul]]
+[[li]][[[Site Rules]]][[/li]]
+[[/ul]][[/li]]
+[[/ul]]
+```
+
+```
+\s\*\s(.+) => [[li]]$1[[/li]]
+```
+```
+\*\s(.+) => 
+
+[[/ul]][[/li]]
+[[/ul]][[ul]]
+[[li]]$1[[ul]] 
+
+and Initial 
+
+[[/ul]][[/li]]
+[[/ul]] 
+
+at the end
+```
+
+If it is not a link, use [# text] to make it a link.
+
 After you translated the above files into your language, please inform me by creating a pull request.
 
 
