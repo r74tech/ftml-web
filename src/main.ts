@@ -63,6 +63,7 @@ async function readlang(lang: string) {
     let op = document.createElement("option");
     op.value = key;
     op.label = langconfig[lang][key];
+    op.text = langconfig[lang][key];
     if (key == lang)
       op.selected = true;
     document.getElementById("lang-select")!.appendChild(op);
