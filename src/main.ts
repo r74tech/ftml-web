@@ -2,6 +2,8 @@ import css from './css/wikidot.css';
 import init from './css/init.css';
 import collapsible from './css/collapsible.css';
 import YAML from 'yaml'
+import { debounce } from "ts-debounce";
+import { throttle } from 'throttle-typescript';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
 let ftml = new Worker(ftmlWorker, {
@@ -75,19 +77,19 @@ const editsideField: HTMLInputElement = <HTMLInputElement>document.getElementByI
 const editsaveButton: HTMLInputElement = <HTMLInputElement>document.getElementById('actionarea-save')!;
 const langSelect: HTMLInputElement = <HTMLInputElement>document.getElementById('lang-select')!;
 
-editpageField.addEventListener('input', (event) => {
-  const { target } = event;
-  if (!(target instanceof HTMLTextAreaElement)) {
-    return;
-  }
-  const value = target.value;
-  const type = "page"
-  const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
-  localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
-  ftml.postMessage({ value: value, type: type });
-});
+editpageField.addEventListener('input', debounce((event) => {
+    const { target } = event;
+    if (!(target instanceof HTMLTextAreaElement)) {
+      return;
+    }
+    const value = target.value;
+    const type = "page"
+    const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
+    localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
+    ftml.postMessage({ value: value, type: type });
+}, 1000));
 
-editsideField.addEventListener('input', (event) => {
+editsideField.addEventListener('input', debounce((event) => {
   const { target } = event;
   if (!(target instanceof HTMLTextAreaElement)) {
     return;
@@ -97,7 +99,7 @@ editsideField.addEventListener('input', (event) => {
   const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
   localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
   ftml.postMessage({ value: value, type: type });
-});
+}, 1000));
 
 edittitleField.addEventListener('input', (event) => {
   const { target } = event;
@@ -109,6 +111,7 @@ edittitleField.addEventListener('input', (event) => {
   const FtmlStorageItem = { title: edittitleField.value, page: editpageField.value, side: editsideField.value };
   localStorage.setItem("FtmlStorage", JSON.stringify(FtmlStorageItem));
 });
+
 langSelect.addEventListener('change', function () {
   const lang = this.value;
   loadlocales(lang);
