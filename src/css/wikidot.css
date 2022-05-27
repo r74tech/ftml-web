@@ -2,16 +2,21 @@
     clear: both;
 }
 
-table.wiki-content-table, table.wj-table {
+table.wiki-content-table,
+table.wj-table {
     border-collapse: collapse;
     border-spacing: 0;
     margin: .5em auto;
 }
-table.wiki-content-table td, table.wj-table td {
+
+table.wiki-content-table td,
+table.wj-table td {
     border: 1px solid #666666;
     padding: .3em .7em;
 }
-table.wiki-content-table th, table.wj-table th {
+
+table.wiki-content-table th,
+table.wj-table th {
     border: 1px solid #666666;
     padding: .3em .7em;
     background-color: #eeeeee;
@@ -20,12 +25,15 @@ table.wiki-content-table th, table.wj-table th {
 .wj-align-center {
     text-align: center;
 }
+
 .wj-align-left {
     text-align: left;
 }
+
 .wj-align-right {
     text-align: right;
 }
+
 .wj-align-justify {
     text-align: justify;
 }
@@ -41,7 +49,7 @@ table.wiki-content-table th, table.wj-table th {
 
 #toc .title {
     font-weight: bold;
-    margin: .2em 0  ;
+    margin: .2em 0;
     padding: 0 2em;
     text-align: center;
 }
@@ -53,16 +61,19 @@ table.wiki-content-table th, table.wj-table th {
 #toc-list {
     margin: .5em 0;
 }
+
 #toc.floatright {
     float: right;
     margin: 1em;
 }
+
 #toc.floatleft {
     float: left;
     margin: 1em;
 }
 
-.code, code {
+.code,
+code {
     border: 1px dashed #999999;
     background-color: #333333;
     font-family: "Andale Mono", "Courier New", Courier, monospace;
@@ -72,13 +83,20 @@ table.wiki-content-table th, table.wj-table th {
 }
 
 
-.footnote .f-heading, .equation .e-heading, .reference .r-heading {
+.footnote .f-heading,
+.equation .e-heading,
+.reference .r-heading {
     font-weight: bold;
 }
-.footnote .f-content, .reference .r-content {
+
+.footnote .f-content,
+.reference .r-content {
     margin: .5em 0;
 }
-.footnote .f-footer, .equation .e-footer, .reference .r-footer {
+
+.footnote .f-footer,
+.equation .e-footer,
+.reference .r-footer {
     font-size: 90%;
 }
 
@@ -88,11 +106,18 @@ table.wiki-content-table th, table.wj-table th {
     /*border-top: 1px solid #CCC;*/
     height: 1%;
 }
+
 .footnotes-footer .title {
     margin: .5em 0;
     font-size: 130%;
     font-weight: bold;
 }
+
 a.footnoteref {
     display: inline-block;
+}
+
+a#account-topbutton:active + div#account-options,
+a#account-topbutton:focus + div#account-options {
+    display: block !important;
 }
