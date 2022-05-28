@@ -33,7 +33,7 @@ You should have received a copy of the GNU Affero General Public License along w
 If you want to help translating Locale Emulator, you can find all strings in
 
  -  [`index.yaml`](/src/public/locales/index.yaml) in [`src/public/locales/`](/src/public/locales/) folder.
- -  `message.yaml`, `side.ftml`, `top.ftml` in [`src/public/locales/lang`](/src/public/locales/) folder.
+ -  `message.yaml`, `theme.css`, `side.ftml`, `top.ftml` in [`src/public/locales/lang`](/src/public/locales/) folder.
 
 `top.ftml`
 ```ftml
