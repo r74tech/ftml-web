@@ -32,6 +32,8 @@ ftml.onmessage = (event: MessageEvent) => {
   }
   if (styles.length > 0) {
     pageStyles.innerHTML = styles.map((v: string) => `<style>\n${v.replace(/\\</g, '&lt;')}\n</style>`).join("\n\n");
+  } else {
+    pageStyles.innerHTML = "";
   }
 };
 
