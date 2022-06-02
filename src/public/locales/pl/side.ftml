@@ -1,0 +1,163 @@
+[[div class="side-block media" style="padding: 10px 0;"]]
+[[=]]
+[[image twitter_icon.png link="https://twitter.com/FundacjaSCP_PL" style="width:30px; height:30px;"]][[Image discord_icon.png link="http://scp-pl.wikidot.com/chat-guide" style="width:30px; height:30px;"]]
+[[/=]]
+[[/div]]
+
+~~~~
+[[div class="side-block"]]
+
+[[div class="menu-item"]]
+[[image home.png]][/main Strona główna]
+[[/div]]
+[[div class="menu-item"]]
+[[image home.png]][http://scp-wiki.wikidot.com/ Witryna angielska]
+[[/div]]
+
+[[div class="heading"]]
+Lektura obowiązkowa
+[[/div]]
+
+
+[[div class="menu-item"]]
+[[image main.png]][[[site-rules|Zasady]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[guide-for-newbies|Poradnik dla nowicjuszy]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[faq|FAQ]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]]__[[[system:join | Dołącz do nas!]]]__
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[guide-hub |Poradniki]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[licensing-guide|Użytkowanie licencji]]]
+[[/div]]
+
+
+
+[[div class="heading"]]
+Baza danych SCP
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[lista-pl|Lista polska]]]
+[[/div]]
+[[div class="menu-item"]]
+[[[scp-ex-pl|EX]]] | [[[joke-scps-pl|J]]]
+[[/div]]
+
+[[div class="menu-item"]]
+[[image series.png]][[[scp-series|Lista angielska]]]
+[[/div]]
+[[div class="menu-item"]]
+[[[scp-series|I]]] | [[[scp-series-2|II]]] | [[[scp-series-3|III]]] | [[[scp-series-4|IV]]] | [[[scp-series-5|V]]] | [[[scp-series-6|VI]]] | [[[scp-series-7|VII]]] | [[[scp-ex|EX]]] | [[[joke-scps|J]]]
+[[/div]]
+
+[[div class="heading"]]
+Biblioteka SCP
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[foundation-tales-pl | Opowieści PL]]] | [[[foundation-tales | EN]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[canon-hub-pl|Kanony PL]]] | [[[canon-hub|Kanony EN]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[goi-formats-pl|GoIF PL]]] | [[[goi-formats|GoIF EN]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[scp-international|Hub międzynarodowy]]]
+[[/div]]
+
+[[div class="heading"]]
+Odkrywaj
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[random:random-scp-pl|Raporty SCP-PL]]] | [[[random:random-scp|EN]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image series.png]][[[random:random-tale-pl|Opowieści-PL]]] | [[[random:random-tale|EN]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[Ostatnio stworzone]]]
+[[/div]]
+[[div class="menu-item sub-item"]]
+[[image main.png]][[[system:recent-changes|Ostatnie zmiany]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[tlumaczone|Aktualne tłumaczenia]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[galeria-slaw|Galeria Sław]]]
+[[/div]]
+[[div class="menu-item sub-item"]]
+[[image main.png]][[[contribute|Wkład]]]
+[[/div]]
+
+[[div class="heading"]]
+Społeczność
+[[/div]]
+[[div class="menu-item sub-item"]]
+[[image main.png]][[[contact-staff|Kontakt]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image main.png]][[[struktura|Struktura Administracji]]]
+[[/div]]
+[[div class="menu-item sub-item"]]
+[[image main.png]][[[authors-pages|Strony autorskie]]]
+[[/div]]
+[[/div]]
+
+~~~~
+
+[!-- @@[[div class="side-block admin"]]@@ --]
+[[div class="side-block"]]
+[[collapsible show="Admin" hide="Admin"]]
+[[div class="menu-item"]]
+[[image main.png]][/_admin Ustawienia witryny]
+[[/div]]
+[[div class="menu-item"]]
+[[image default.png]][http://www.wikidot.com/doc:wiki-syntax Wiki Syntax]
+[[/div]]
+[[div class="menu-item"]]
+[[image default.png]][[[system:list-all-pages|Wszystkie strony]]]
+[[/div]]
+[[div class="menu-item"]]
+[[image default.png]][/workbench Workbench]
+[[/div]]
+[[div class="menu-item"]]
+[[image default.png]][[[nav:side|Side]]] | [[[component:theme|Theme]]] | [[[nav:top|Top]]]
+[[/div]]
+[[/collapsible]]
+[[/div]]
+
+~~~~
+
+[!-- @@[[div class="side-block licensing"]]@@ --]
+[[div class="side-block"]]
+[[=]]
+[[size 90%]] **SCP Polska Filia [https://creativecommons.org/licenses/by-sa/3.0/deed.pl CC BY-SA 3.0]**
+[[[licensing-guide|Informacje licencyjne]]][[/size]]
+[[/=]]
+[[/div]]
+
+
+~~~~
+
+[[a href="#" class="close-menu"]]
+[[image black.png style="z-index:-1; opacity: 0.3;"]]
+[[/a]]
+
+[[include :scp-wiki:nav:interwiki
+| lang=pl
+| community=scp
+]]
+
+[[include :scp-wiki:component:interwiki-style
+| priority=0
+| theme=https://scp-wiki.wdfiles.com/local--code/component%3Atheme/1
+]]
