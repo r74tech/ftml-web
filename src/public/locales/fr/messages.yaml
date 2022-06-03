@@ -1,0 +1,12 @@
+actionarea:
+  title: "Modifier la page"
+  titleinput: "Titre de la page"
+  message:
+    - "Le code wiki est prévisualisé en temps réel."
+    - "La sauvegarde automatique est activée."
+    - "Cliquer sur enregistrer pour enregistrer la page."
+    - "L'affichage de la barre de navigation latérale peut être modifié dans les paramètres avancés."
+  save: "enregistrer"
+  advancedsettings: "Paramètres avancés"
+  advancedsettingstitle: "Modifier la barre de navigation latérale"
+  langselect: "Langue : "
