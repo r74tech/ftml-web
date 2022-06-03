@@ -2,15 +2,24 @@ default:
   en: "English"
   ja: "Japanese"
   cn: "Chinese"
+  fr: "French"
 en:
   en: "English"
   ja: "Japanese"
   cn: "Chinese"
+  fr: "French"
 ja:
   en: "英語"
   ja: "日本語"
   cn: "中国語"
+  fr: "フランス語"
 cn:
   en: "英语"
   ja: "日语"
   cn: "汉语"
+  fr: "法语"
+fr:
+  en: "Anglais"
+  ja: "Japonais"
+  cn: "Chinois"
+  fr: "Français"
