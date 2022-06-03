@@ -65,6 +65,9 @@ at the end
 If it is not a link, use [# text] to make it a link.
 
 After you translated the above files into your language, please inform me by creating a pull request.
+> **Note**
+> Please, when you send PRs for other language versions, send them in one PR.
+
 
 
 ## Acknowledgments 
