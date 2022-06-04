@@ -2,22 +2,37 @@ default:
   en: "English"
   ja: "Japanese"
   cn: "Chinese"
+  fr: "French"
   tr: "Turkish"
+  
 en:
   en: "English"
   ja: "Japanese"
   cn: "Chinese"
+  fr: "French"
   tr: "Turkish"
+  
 ja:
   en: "英語"
   ja: "日本語"
   cn: "中国語"
+  fr: "フランス語"
   tr: "トルコ語"
+  
 cn:
   en: "英语"
   ja: "日语"
   cn: "汉语"
+  fr: "法语"
   tr: "土耳其"
+  
+fr:
+  en: "Anglais"
+  ja: "Japonais"
+  cn: "Chinois"
+  fr: "Français"
+  tr: "turque"
+
 tr:
   en: "İngilizce"
   ja: "Japonca"

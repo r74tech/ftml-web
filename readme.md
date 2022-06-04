@@ -1,5 +1,5 @@
 # Wikitext Previewer (FTML/Wikidot Web Previewer)
-![](https://img.shields.io/github/workflow/status/RTa-scp/ftml-web/deploy?style=flat-square)  
+![](https://img.shields.io/github/workflow/status/RTa-technology/ftml-web/deploy?style=flat-square)  
 A WebApp to preview FTML, the SCP Foundation's markup language, on the Web.
 ![image](https://user-images.githubusercontent.com/57354947/170820883-135b74cf-bd3f-4dc3-9611-17fad265a495.png)
 > "SCP-173" by Moto42, from the SCP Wiki. Source: https://scp-wiki.wikidot.com/scp-173. Licensed under CC-BY-SA.
@@ -65,6 +65,9 @@ at the end
 If it is not a link, use [# text] to make it a link.
 
 After you translated the above files into your language, please inform me by creating a pull request.
+> **Note**
+> Please, when you send PRs for other language versions, send them in one PR.
+
 
 
 ## Acknowledgments 
