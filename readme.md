@@ -71,6 +71,12 @@ After you translated the above files into your language, please inform me by cre
 > **Note**
 > Please, when you send PRs for other language versions, send them in one PR.
 
+## Contributers
+<a href="https://github.com/RTa-technology/ftml-web/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=RTa-technology/ftml-web" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 
 ## Acknowledgments 
