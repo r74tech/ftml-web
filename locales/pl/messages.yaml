@@ -1,0 +1,12 @@
+actionarea:
+  title: "Edytuj"
+  titleinput: "Tytuł strony"
+  message:
+    - "Podgląd wikitextu na bieżąco."
+    - "Włączone jest automatyczne tworzenie kopii zapasowej."
+    - "Przycisk zapisywania zapisuje plik."
+    - "Treść paska bocznego może być zmieniona w Ustawieniach Zaawansowanych."
+  save: "Zapisz"
+  advancedsettings: "Ustawienia Zaawansowane"
+  advancedsettingstitle: "Edytuj pasek boczny"
+  langselect: "Język: "
