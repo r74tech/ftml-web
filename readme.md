@@ -21,7 +21,7 @@ pnpm run dev
 ## License
 Copyright (C) 2022- Zokhoi & other vscode-ftml contributors ([vscode-ftml](https://github.com/Zokhoi/vscode-ftml))
 
-Copyright (C) 2022- RTa-technology & other ftml-web contributors (see AUTHORS.md)
+Copyright (C) 2022- RTa-technology & other ftml-web contributors (see AUTHORS)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
