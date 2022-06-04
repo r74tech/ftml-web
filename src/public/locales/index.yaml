@@ -3,38 +3,53 @@ default:
   ja: "Japanese"
   cn: "Chinese"
   fr: "French"
+  pl: "Polish"
   tr: "Turkish"
-  
+
 en:
   en: "English"
   ja: "Japanese"
   cn: "Chinese"
   fr: "French"
+  pl: "Polish"
   tr: "Turkish"
-  
+
 ja:
   en: "英語"
   ja: "日本語"
   cn: "中国語"
   fr: "フランス語"
+  pl: "ポーランド語"
   tr: "トルコ語"
-  
+
 cn:
   en: "英语"
   ja: "日语"
   cn: "汉语"
   fr: "法语"
+  pl: "波兰语"
   tr: "土耳其"
-  
+
 fr:
   en: "Anglais"
   ja: "Japonais"
   cn: "Chinois"
   fr: "Français"
-  tr: "turque"
+  pl: "Polonais"
+  tr: "Turque"
+
+pl:
+  en: "Angielski"
+  ja: "Japoński"
+  cn: "Chiński"
+  fr: "Francuski"
+  pl: "Polski"
+  tr: "Turecki"
 
 tr:
   en: "İngilizce"
   ja: "Japonca"
   cn: "Çince"
+  fr: "Fransızca"
+  pl: "Lehçe"
   tr: "Türkçe"
