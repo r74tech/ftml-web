@@ -60,6 +60,9 @@ and Initial
 [[/ul]] 
 
 at the end
+
+\[\[li\]\](.+)\[\[ul\]\] => [[li]][# $1][[ul]]
+
 ```
 
 If it is not a link, use [# text] to make it a link.
