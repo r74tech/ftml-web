@@ -3,23 +3,35 @@ default:
   ja: "Japanese"
   cn: "Chinese"
   fr: "French"
+  pl: "Polish"
 en:
   en: "English"
   ja: "Japanese"
   cn: "Chinese"
   fr: "French"
+  pl: "Polish"
 ja:
   en: "英語"
   ja: "日本語"
   cn: "中国語"
   fr: "フランス語"
+  pl: "ポーランド語"
 cn:
   en: "英语"
   ja: "日语"
   cn: "汉语"
   fr: "法语"
+  pl: "波兰语"
 fr:
   en: "Anglais"
   ja: "Japonais"
   cn: "Chinois"
   fr: "Français"
+  pl: "Polonais"
+pl:
+  en: "Angielski"
+  ja: "Japoński"
+  cn: "Chiński"
+  fr: "Francuski"
+  pl: "Polski"
+  
