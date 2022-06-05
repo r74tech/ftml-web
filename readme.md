@@ -45,11 +45,13 @@ If you want to help translating Locale Emulator, you can find all strings in
 ```
 
 ```
-\s\*\s(.+) => [[li]]$1[[/li]]
+\s\*\s(.+)
+↓
+[[li]]$1[[/li]]
 ```
 ```
-\*\s(.+) => 
-
+\*\s(.+)
+↓
 [[/ul]][[/li]]
 [[/ul]][[ul]]
 [[li]]$1[[ul]] 
