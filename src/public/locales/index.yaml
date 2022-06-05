@@ -5,6 +5,7 @@ default:
   fr: "French"
   pl: "Polish"
   tr: "Turkish"
+  vi: "Vietnamese"
 
 en:
   en: "English"
@@ -13,6 +14,7 @@ en:
   fr: "French"
   pl: "Polish"
   tr: "Turkish"
+  vi: "Vietnamese"
 
 ja:
   en: "英語"
@@ -21,6 +23,7 @@ ja:
   fr: "フランス語"
   pl: "ポーランド語"
   tr: "トルコ語"
+  vi: "ベトナム語"
 
 cn:
   en: "英语"
@@ -29,6 +32,7 @@ cn:
   fr: "法语"
   pl: "波兰语"
   tr: "土耳其"
+  vi: "越南语"
 
 fr:
   en: "Anglais"
@@ -37,6 +41,7 @@ fr:
   fr: "Français"
   pl: "Polonais"
   tr: "Turque"
+  vi: "Vietnamien"
 
 pl:
   en: "Angielski"
@@ -45,6 +50,7 @@ pl:
   fr: "Francuski"
   pl: "Polski"
   tr: "Turecki"
+  vi: "Wietnamski"
 
 tr:
   en: "İngilizce"
@@ -53,3 +59,13 @@ tr:
   fr: "Fransızca"
   pl: "Lehçe"
   tr: "Türkçe"
+  vi: "Vietnamca"
+
+vi:
+  en: "Tiếng Anh"
+  ja: "Tiếng Nhật"
+  cn: "Tiếng Trung"
+  fr: "Tiếng Pháp"
+  pl: "Tiếng Ba Lan"
+  tr: "Tiếng Thổ Nhĩ Kỳ"
+  vi: "Tiếng Việt"
