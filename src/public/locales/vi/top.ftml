@@ -1,328 +1,42 @@
-[[image https://i.imgur.com/LK22yZY.png width="0" height="0"]]
-
-[[div class="side-block"]]
-[[=]]
-[[div_ class="menu-item"]]
-[[[/|Trang Chủ]]]
-[[/div]]
-[[div_ class="menu-item"]]
-[[[forum:start|Diễn Đàn]]] | [[[forum:recent-posts|Post Mới]]]
-[[/div]]
-[[/=]]
-[[/div]]
-~~~~
-[[div class="side-block resources"]]
-[[collapsible show="▷ Dành Cho Lính Mới" hide="▽ Bấm vào đây để đóng"]]
-
-[[div class="menu-item"]]
-[[[guide-for-newbies|Hướng Dẫn Tham Gia]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[required-reading-hub|Hướng Dẫn Cần Đọc]]]
+[[div class="top-bar"]][[li]]Cộng Đồng[[/li]]
+[[li]][[[news | Tin Báo]]][[/li]]
+[[li]][[[chat-guide | Kênh Chat]]][[/li]]
+[[li]][[[authors-pages|Trang Tác Giả]]][[/li]]
+[[li]][[[http://05command-vn.wikidot.com/staff-list|Nhân Viên]]][[/li]][[li]]Tài Nguyên[[/li]]
+[[li]][[[Contribute|Đóng Góp]]][[/li]]
+[[li]][[[guide-hub|Hướng Dẫn]]][[/li]]
+[[li]][[[Essay Hub|Luận Văn]]][[/li]]
+[[li]][[[foundation-introduction-hub|Trung tâm Giới thiệu]]][[/li]]
+[[li]][[[Wiki Syntax|Cú Pháp Wiki]]][[/li]]
+[[li]][[[usertools | Công cụ Người dùng]]][[/li]]
+[[li]][[[http://scpvnsandbox2.wikidot.com/ | Trang Nháp]]][[/li]][[li]]Liên Kết[[/li]]
+[[li]][[[http://scp-int.wikidot.com/|Lưu Trữ Quốc Tế]]][[/li]]
+[[li]][[[https://wanderers-library-vn.wikidot.com/|Thư Viện của Lãng Khách]]][[/li]][[li]]Luật Lệ[[/li]]
+[[li]][[[site-rules | Nội Quy Trang]]][[/li]]
+[[li]][[[criticism-policy | Quy Định Nhận Xét]]][[/li]]
+[[li]][[[licensing-guide | Quy Định Giấy Phép]]][[/li]]
+[[li]][[[deletions-guide | Quy Định Xóa Bài]]][[/li]][[li]][[[contact-staff|Liên Hệ]]][[/li]]
 [[/div]]
 
-[[div class="menu-item"]]
-[[[faq|Câu Hỏi Thường Gặp]]]
-[[/div]]
+[[div class="mobile-top-bar"]]
 
-[[div class="menu-item"]]
-[[[foundation-introduction-hub|Giới Thiệu SCPF]]]
+[[div class="open-menu"]]
+[#side-bar ≡]
+[[/div]][[li]]Cộng Đồng[[/li]]
+[[li]][[[news | Tin Báo]]][[/li]]
+[[li]][[[chat-guide | Kênh Chat]]][[/li]]
+[[li]][[[authors-pages|Trang Tác Giả]]][[/li]]
+[[li]][[[http://05command-vn.wikidot.com/staff-list|Nhân Viên]]][[/li]][[li]]Tài Nguyên[[/li]]
+[[li]][[[Contribute|Đóng Góp]]][[/li]]
+[[li]][[[guide-hub|Hướng Dẫn]]][[/li]]
+[[li]][[[Essay Hub|Luận Văn]]][[/li]]
+[[li]][[[foundation-introduction-hub|Trung tâm Giới thiệu]]][[/li]]
+[[li]][[[Wiki Syntax|Cú Pháp Wiki]]][[/li]]
+[[li]][[[usertools | Công cụ Người dùng]]][[/li]]
+[[li]][[[http://scpvnsandbox2.wikidot.com/ | Trang Nháp]]][[/li]][[li]]Luật Lệ[[/li]]
+[[li]][[[site-rules | Nội Quy Trang]]][[/li]]
+[[li]][[[criticism-policy | Quy Định Nhận Xét]]][[/li]]
+[[li]][[[licensing-guide | Quy Định Giấy Phép]]][[/li]]
+[[li]][[[deletions-guide | Quy Định Xóa Bài]]][[/li]]
+[[li]][[[contact-staff|Liên Hệ]]][[/li]]
 [[/div]]
-
-[[/collapsible]]
-[[/div]]
-
-~~~~
-
-[[div class="side-block"]]
-[[div class="heading"]]
-SCP theo Series
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[scp-series|I]]] | [[[scp-series-2|II]]] | [[[scp-series-3|III]]] | [[[scp-series-4|IV]]] | [[[scp-series-5|V]]] | [[[scp-series-6|VI]]] | [[[scp-series-7|VII]]]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[scp-ex|EX]]] | [[[joke-scps|J]]]
-[[/div]]
-
-[[div class="heading"]]
-Truyện
-[[/div]]
-
-[[div class="menu-item"]]
-[[[groups-of-interest|TLĐLT]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[goi-formats|Tài Liệu TLĐLT]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[canon-hub|Trung Tâm Canon]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[foundation-tales|Ngoại Truyện]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[contest-archive|Lưu Trữ Cuộc Thi]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[series-archive|Lưu Trữ Series]]]
-[[/div]]
-[[/div]]
-
-~~~~
-[[div class="side-block"]]
-[[div class="heading"]]
-SCP-VN theo Series
-[[/div]]
-
-[[div class="menu-item" style="font-size: 90%;"]]
-[[[scp-series-vn|Series I]]]
-[[/div]]
-
-[[div class="menu-item" style="font-size: 90%;"]]
-[[[scp-ex-vn|EX-VN]]] | [[[joke-scps-vn|J-VN]]]
-[[/div]]
-
-[[div class="heading"]]
-Truyện-VN
-[[/div]]
-
-[[div class="menu-item"]]
-[[[groups-of-interest-vn|TLĐLT-VN]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[goi-formats-vn|Tài Liệu TLĐLT-VN]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[canon-hub-vn|Trung Tâm Canon-VN]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[foundation-tales-vn|Ngoại Truyện-VN]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[contest-archive-vn|Lưu Trữ Cuộc Thi Việt Nam]]]
-[[/div]]
-
-[[div class="menu-item"]]
-[[[series-archive-vn|Lưu Trữ Series-VN]]]
-[[/div]]
-[[/div]]
-~~~~
-[[div class="side-block" style="background-color: #fff;"]]
-[[collapsible show="▷ Lưu Trữ Quốc Tế" hide="▽ Bấm vào đây để đóng"]]
-@@ @@
-= **[[[scp-international|Trung Tâm Lưu Trữ]]]*[[/ul]][[/li]][[/ul]][[ul]][[li]][# @@ @@][[ul]] 
-[[div class="grid-container"]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-int-full.svg width="50rem" link="/int-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Quốc Tế [[/span]] INT [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-ru.svg width="50rem" link="/ru-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Nga [[/span]] RU [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-ko-400.png width="50rem" link="/ko-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Hàn [[/span]] KO [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-cn-400.png width="50rem" link="/cn-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Trung Giản Thể [[/span]] CN [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-fr-400.png width="50rem" link="/fr-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Pháp [[/span]] FR [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-pl.svg width="50rem" link="/pl-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Ba Lan [[/span]] PL [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://scp-wiki-de.wdfiles.com/local--files/achievements/Zeit_f%C3%BCr_Siesta.png width="50rem" link="/es-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Tây Ban Nha [[/span]] ES [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-th.svg width="50rem" link="/th-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Thái [[/span]] TH [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-jp.svg width="50rem" link="/jp-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Nhật [[/span]] JP [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://scp-int.wdfiles.com/local--files/main/scp-logo-dach-400.png width="50rem" link="/de-hub"]] _
-[[span class="hover"]][[span class="hover-text"]] Tiếng Đức [[/span]] DE [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-it.svg width="50rem" link="/it-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Ý [[/span]] IT [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-ua.svg width="50rem" link="/ua-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Ukraina [[/span]] UA [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://scp-wiki.wdfiles.com/local--files/scp-international/scp-logo-pt-400.png width="50rem" link="/pt-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Bồ Đào Nha [[/span]] PT [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-cs.svg width="50rem" link="cs-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Séc [[/span]] CS [[/span]]
-[[/div]]
-
-[[div class="branch"]]
-[[image http://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-zh.svg width="50rem" link="/zh-hub"]]
-[[span class="hover"]][[span class="hover-text"]] Tiếng Trung Phồn Thể [[/span]] ZH-TR [[/span]]
-[[/div]]
-
-[[/div]]
-@@ @@
-= **[[[other-hub|Các Chi Nhánh Khác]]]*[[/ul]][[/li]][[/ul]][[ul]][[li]][# @@ @@][[ul]] 
-[[/collapsible]]
-[[/div]]
-~~~~
-[[div class="side-block" style="background-color: #fff;"]]
-[[collapsible show="▷ Công Cụ Hệ Thống" hide="▽ Bấm vào đây để đóng"]]
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[system:recent-changes|Thay Đổi Gần Đây]]]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[new-pages-feed|Trang Mới]]]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[top-rated-pages-this-month|Đánh Giá Cao]]] | [[[lowest-rated-pages|Thấp Nhất]]]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[shortest-pages-this-month|Trang Ngắn Nhất Tháng]]]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[[[tag-search|Tra Cứu]]] | [[[tag-guide-for-translator|Từ Điển Tag]]]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[*http://scpper.com/ ScpperDB] | [*https://crom.avn.sh/ Crom]
-[[/div]]
-
-[[div_ class="menu-item" style="font-size: 90%;"]]
-[*http://notifications.wikidot.com/ Thông Báo Diễn Đàn]
-[[/div]]
-[[/collapsible]]
-[[/div]]
-~~~~
-[[div class="side-block media" style="padding: 10px 0;"]]
-[[=]]
-[[image https://gitcdn.link/repo/scp-cs/scp-cs-wiki/master/SVGs/Facebook.svg link="https://www.facebook.com/SCPFoundationvietnam.39876/" style="width:30px; height:30px;" alt="Facebook"]][[image https://gitcdn.link/repo/scp-cs/scp-cs-wiki/master/SVGs/Discord.svg link="https://discord.gg/mqVdQAMTyX" style="width:30px; height:30px;" alt="Discord"]][[image http://scp-vn.wdfiles.com/local--files/nav%3Aside/YouTube-icon-sync link="https://www.youtube.com/c/SCPFoundationVietnam" style="width:30px; height:30px;" alt="YouTube"]]
-[[/=]]
-[[/div]]
-~~~~
-[[div class="side-block" style="background-color: #fff0f0;"]]
-[[collapsible show="▷ Dành Cho Nhân Viên" hide="▽ Bấm vào đây để đóng"]]
-[[div class="menu-item"]]
-[/_admin Bảng Điều Hành]
-[[/div]]
-[[div class="menu-item"]]
-[[[system:list-all-pages|Liệt Kê Toàn Bộ Trang]]]
-[[/div]]
-[[div class="menu-item"]]
-[[[system:members|Danh Sách Thành Viên]]]
-[[/div]]
-[[div class="menu-item"]]
-[[[nav:side|Cạnh]]] | [[[nav:top|Trên]]] | [[[component:theme|Chủ Tố]]]
-[[/div]]
-[[/collapsible]]
-[[/div]]
-~~~~
-[[module css]]
-#side-bar .collapsible-block-folded {
-    background: none;
-}
-#side-bar .side-block.resources {
-    background: #e7f7e9;
-}
-[[/module]]
-
-[[a href="##" class="close-menu"]]
-[[image https://scp-wiki.wdfiles.com/local--files/nav:side/black.png style="z-index:-1; opacity: 0.3;"]]
-[[/a]]
-
-[[module css]]
-#side-bar .collapsible-block-folded {
-    background: none;
-}
-#side-bar .collapsible-block-link {
-    margin-left: 0;
-}
-#side-bar .side-block.resources {
-    background: #e7f7e9;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    text-align: center;
-    grid-gap: 0.25rem;
-    margin: 0.5rem 0 1rem
-}
-#side-bar .branch a:hover img, #side-bar .branch a:focus img {
-    transition: 100ms;
-    transform: scale(1.2)
-}
-
-#side-bar .hover {
-    color: #bb0011;
-    font-weight: bold
-}
-#side-bar .hover .hover-text {
-    position: absolute;
-    display: none;
-    margin: 2rem;
-    height: auto;
-    width: auto;
-    background: white;
-    border: 2px solid black;
-    color: black;
-    padding: 0.5rem;
-    pointer-events: none;
-    transition: opacity 0.15s linear, right 0.3s cubic-bezier(.08,.72,.5,.94)
-}
-
-#side-bar .hover:hover {
-   text-decoration: none;
-   border-bottom: none;
-   color: #333
-}
-#side-bar .hover:hover .hover-text {
-    display: inline
-}
-[[/module]]
