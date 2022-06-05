@@ -63,11 +63,11 @@ async function loadlocales(lang: string = 'en') {
 async function readlang(lang: string) {
   document.getElementById("lang-select")!.innerHTML = "";
   const langconfig = YAML.parse(await fetch('./locales/index.yaml').then(v => v.text()));
-  for (const key in langconfig[lang]) {
+  for (const key in langconfig["lang"]) {
     let op = document.createElement("option");
     op.value = key;
-    op.label = langconfig[lang][key];
-    op.text = langconfig[lang][key];
+    op.label = langconfig["lang"][key];
+    op.text = langconfig["lang"][key];
     if (key == lang)
       op.selected = true;
     document.getElementById("lang-select")!.appendChild(op);
