@@ -1,0 +1,12 @@
+actionarea:
+  title: "Chỉnh Sửa Trang"
+  titleinput: "Tiêu đề trang"
+  message:
+    - "Code wiki được tự động hiển thị để xem trước trong thời gian thực."
+    - "Sao lưu tự động được bật."
+    - "Nút lưu để lưu code về máy."
+    - "Thanh cạnh có thể được thay đổi từ phần Cài đặt nâng cao."
+  save: "lưu"
+  advancedsettings: "Cài đặt nâng cao"
+  advancedsettingstitle: "Sửa Thanh Cạnh"
+  langselect: "Ngôn ngữ: "
