@@ -81,17 +81,12 @@ Site jumeau
 [[[vagabonds:main|La Bibliothèque des Vagabonds]]]
 [[/div]]
 
-[[include system:members-eyes-only head=-]]
 [[div class="heading"]]
 Technique
 [[/div]]
 [[div class="menu-item main"]]
 [[[creer-une-page|]]]
 [[/div]]
-[!-- Module cassé
-[[module NewPage size="20" tags="conte" button="Nouvelle page"]]
---]
-[[include system:members-eyes-only foot=-]]
 
 [[/div]]
 
