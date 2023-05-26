@@ -121,3 +121,8 @@ a#account-topbutton:active + div#account-options,
 a#account-topbutton:focus + div#account-options {
     display: block !important;
 }
+
+
+.wj-collapsible[open][data-show-top] > .wj-collapsible-button-top > .wj-collapsible-show-text {
+    display: unset;
+}

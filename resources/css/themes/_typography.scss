@@ -1,0 +1,138 @@
+// prettier-ignore
+:root {
+
+  /// Base font size multiplier for content.
+  --font-content-size: 0.875;
+
+  // --font-system-x (by itself) attempts to use default system fonts.
+  // It avoids using fairly ancient fallback fonts, or 'web-safe fonts', like Arial.
+  // Instead, this just uses the CSS default rather than force a web-safe font.
+  // Native emoji fonts are always included at the end to allow rendering of most emoji.
+  // This will always be imperfect.
+  // e.g. Noto is notorious for being on many systems and overriding the correct font.
+  // Also, the ordering does not signify any preference for an operating system.
+
+  --font-system-symbol:
+    emoji,
+    "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Emoji";
+
+  --font-system-default:
+    system-ui,
+    sans-serif;
+
+  --font-system-sans:
+    ui-sans-serif,
+    -apple-system,
+    "Segoe UI",
+    "Ubuntu",
+    "Oxygen-Sans",
+    "Cantarell",
+    "Roboto", "Noto",
+    var(--font-system-default);
+
+  --font-system-rounded:
+    ui-rounded,
+    var(--font-system-sans);
+
+  --font-system-serif:
+    ui-serif,
+    "Noto Serif",
+    "Times New Roman",
+    var(--font-system-default);
+
+  --font-system-mono:
+    ui-monospace,
+    "SFMono-Regular", "Menlo",
+    "Consolas",
+    "Roboto Mono", "Droid Mono",
+    monospace,
+    var(--font-system-default);
+
+  // default for non-CJK locales (this assumes JP)
+
+  /// CJK font stack.
+  --font-cjk:
+    "Noto Sans CJK JP",
+    "Noto Sans CJK SC",
+    "Noto Sans CJK HK",
+    "Noto Sans CJK TC",
+    "Noto Sans CJK KR";
+
+  /// CJK monospace font.
+  --font-cjk-mono: "Noto Sans Mono CJK JP";
+
+  /// Ordinary sans-serif font.
+  --font-sans:
+    "Public Sans",
+    var(--font-system-symbol),
+    var(--font-cjk),
+    var(--font-system-sans);
+
+  /// Font used for important/flashy elements.
+  --font-display:
+    "Red Hat Display",
+    var(--font-system-symbol),
+    var(--font-cjk),
+    var(--font-system-rounded);
+
+  /// Ordinary serif font.
+  --font-serif:
+    "Bitter",
+    var(--font-system-symbol),
+    var(--font-cjk),
+    var(--font-system-serif);
+
+  /// Font used for code, monospaced text, etc.
+  --font-mono:
+    "Cascadia Mono",
+    var(--font-system-symbol),
+    var(--font-cjk-mono),
+    var(--font-system-mono);
+
+  // Small displays (e.g. phones)
+  @include media("<=small") {
+    --font-content-size: 0.75;
+  }
+}
+
+// Changing CJK font based on locale
+
+// Japanese
+:lang(ja) {
+  --font-cjk: "Noto Sans CJK JP", "Noto Sans CJK SC", "Noto Sans CJK TC",
+    "Noto Sans CJK KR";
+  --font-cjk-mono: "Noto Sans Mono CJK JP";
+}
+
+// Korean
+:lang(ko) {
+  --font-cjk: "Noto Sans CJK KR", "Noto Sans CJK JP", "Noto Sans CJK SC",
+    "Noto Sans CJK TC";
+  --font-cjk-mono: "Noto Sans Mono CJK KR";
+}
+
+// Chinese (default), Chinese (mainland), Chinese (Simplified)
+:lang(zh):not(:lang(zh-HK)):not(:lang(zh-TW)):not(:lang(zh-Hant)),
+:lang(zh-Hans),
+:lang(zh-CN) {
+  --font-cjk: "Noto Sans CJK SC", "Noto Sans CJK TC", "Noto Sans CJK JP",
+    "Noto Sans CJK KR";
+  --font-cjk-mono: "Noto Sans Mono CJK SC";
+}
+
+// Chinese (Hong Kong)
+:lang(zh-HK) {
+  --font-cjk: "Noto Sans CJK HK", "Noto Sans CJK SC", "Noto Sans CJK TC",
+    "Noto Sans CJK JP", "Noto Sans CJK KR";
+  --font-cjk-mono: "Noto Sans Mono CJK HK";
+}
+
+// Chinese (Taiwan), Chinese (Traditional)
+:lang(zh-TW),
+:lang(zh-Hant) {
+  --font-cjk: "Noto Sans CJK TC", "Noto Sans CJK SC", "Noto Sans CJK JP",
+    "Noto Sans CJK KR";
+  --font-cjk-mono: "Noto Sans Mono CJK TC";
+}

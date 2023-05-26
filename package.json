@@ -7,17 +7,27 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@types/node": "^18.0.3",
-		"@types/wicg-file-system-access": "^2020.9.5",
-		"@vscode-ftml/ftml-wasm": "^1.16.2",
-		"esbuild": "^0.17.10",
-		"eslint": "^8.19.0",
-		"sass": "^1.53.0",
-		"terser": "^5.16.4",
+		"@types/node": "^18.16.15",
+		"@types/wicg-file-system-access": "^2020.9.6",
+		"@vscode-ftml/ftml-wasm": "^1.18.1",
+		"@wikijump/ftml-components": "link:modules\\ftml-components",
+		"autoprefixer": "^10.4.14",
+		"esbuild": "^0.17.19",
+		"eslint": "^8.41.0",
+		"include-media": "^2.0.0",
+		"node-sass-import-once": "^1.2.0",
+		"postcss-merge-queries": "^1.0.3",
+		"terser": "^5.17.6",
 		"throttle-typescript": "^1.1.0",
+		"tippy.js": "6.2.5",
 		"ts-debounce": "^4.0.0",
-		"typescript": "^4.7.4",
-		"vite": "^4.1.3",
-		"yaml": "^2.1.1"
+		"typescript": "^4.9.5",
+		"vite": "^4.3.9",
+		"yaml": "^2.3.1"
+	},
+	"devDependencies": {
+		"sass": "^1.62.1",
+		"sass-loader": "^10.4.1",
+		"webpack": "^5.84.1"
 	}
 }

@@ -1,3 +1,4 @@
+import '@/../resources/css/main.scss';
 import css from './css/wikidot.css';
 import init from './css/init.css';
 import collapsible from './css/collapsible.css';
