@@ -126,3 +126,7 @@ a#account-topbutton:focus + div#account-options {
 .wj-collapsible[open][data-show-top] > .wj-collapsible-button-top > .wj-collapsible-show-text {
     display: unset;
 }
+
+code, .code {
+    background-color: unset;
+}

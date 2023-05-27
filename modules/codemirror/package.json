@@ -1,0 +1,32 @@
+{
+  "name": "@wikijump/codemirror",
+  "license": "agpl-3.0-or-later",
+  "description": "Helper package that consolidates CodeMirror exports.",
+  "version": "0.0.0",
+  "keywords": [
+    "wikijump"
+  ],
+  "private": true,
+  "scripts": {},
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@codemirror/autocomplete": "^0.20.1",
+    "@codemirror/commands": "^0.20.0",
+    "@codemirror/lang-css": "^0.20.0",
+    "@codemirror/lang-html": "^0.20.0",
+    "@codemirror/language": "^0.20.2",
+    "@codemirror/language-data": "^0.20.0",
+    "@codemirror/legacy-modes": "^0.20.0",
+    "@codemirror/lint": "^0.20.2",
+    "@codemirror/search": "^0.20.1",
+    "@codemirror/state": "^0.20.0",
+    "@codemirror/view": "^0.20.6",
+    "@lezer/common": "^0.16.0",
+    "@lezer/lr": "^0.16.3",
+    "@lezer/highlight": "^0.16.0",
+    "@wikijump/components": "workspace:*",
+    "@wikijump/util": "workspace:*",
+    "svelte": "^3.48.0"
+  }
+}

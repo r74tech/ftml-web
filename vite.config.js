@@ -54,7 +54,8 @@ module.exports = {
   resolve: {
     alias: {
       '@': resolve(__dirname, root),
-      '/node_modules/': path.resolve(__dirname, 'node_modules/')
+      '/node_modules/': path.resolve(__dirname, 'node_modules/'),
+      "@wikijump": resolve(__dirname, 'modules/'),
     },
   },
 };

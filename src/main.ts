@@ -1,4 +1,5 @@
 import '@/../resources/css/main.scss';
+import '@wikijump/ftml-components/src/index.ts';
 import css from './css/wikidot.css';
 import init from './css/init.css';
 import collapsible from './css/collapsible.css';

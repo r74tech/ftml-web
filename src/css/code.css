@@ -1,0 +1,39 @@
+:root {
+  --colcode-background: #F0F0F2;
+  --colcode-hover:      #E8E8ED;
+  --colcode-border:     #D2D2D7;
+  --colcode-selection:  #3296FF20;
+  --colcode-accent:     #1262B5;
+
+  --colcode-content:    #222222;
+  --colcode-comment:    #666666;
+  --colcode-commentdoc: #666688;
+  --colcode-punct:      #818D94;
+  --colcode-markup:     #2269A8;
+  --colcode-link:       #64A0FF;
+
+  --colcode-special:    #EC1C12;
+  --colcode-invalid:    #FF3214;
+
+  --colcode-inserted:   #54D169;
+  --colcode-changed:    #FF9614;
+  --colcode-important:  #FFCB6BEE;
+  --colcode-highlight:  #C878C8;
+  --colcode-note:       #5694D6;
+
+  --colcode-keyword:    #C708FF;
+  --colcode-logical:    #C708FF;
+  --colcode-operator:   #41B2D1;
+  --colcode-storage:    #41B2D1;
+  --colcode-string:     #10AB00;
+  --colcode-entity:     #10AB00;
+  --colcode-type:       #9C8922;
+  --colcode-ident:      #005296;
+  --colcode-function:   #3394CC;
+  --colcode-constant:   #BB5F00;
+  --colcode-property:   #EC1C12;
+  --colcode-tag:        #EC1C12;
+  --colcode-id:         #3394CC;
+  --colcode-class:      #10AB00;
+  --colcode-attribute:  #FFCB6B;
+}
