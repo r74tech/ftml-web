@@ -32,7 +32,7 @@
 		"yaml": "^2.3.1"
 	},
 	"devDependencies": {
-		"sass": "^1.62.1",
+		"sass": "^1.63.2",
 		"sass-loader": "^13.3.1",
 		"webpack": "^5.84.1"
 	}
