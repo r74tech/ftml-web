@@ -28,32 +28,6 @@
 [[/div]]
 [[/div]]
 
-[[div class="side-block test3 new-work-list"]]
-[[div id="sb_scp"]]
-[[collapsible show="最新作品" hide="最新作品"]]
-[[module ListPages category="_default wanderers adult artwork art" order="created_at desc" rating="> -4" limit="10" separate="no" tag="-遮蔽頁 -_下沉"]]
-[[div class="%%tags%%"]]
-[[div class="entry-title undefined menu-item"]]
-[[image http://scp-zh-tr.wdfiles.com/local--files/nav:side/series.png]]%%title_linked%%
-[[/div]]
-[[div class="entry-title original menu-item"]]
-[[image https://cdn.discordapp.com/attachments/732811600301391902/779243580362588190/export.png]]%%title_linked%%
-[[/div]]
-[[div class="entry-title trans menu-item"]]
-[[image https://cdn.discordapp.com/attachments/732811600301391902/779243691797250048/export.png]]%%title_linked%%
-[[/div]]
-[[div class="entry-title art menu-item"]]
-[[image https://cdn.discordapp.com/attachments/670304482151890954/783282106812989460/4a4b0cca300a2f87.png]]%%title_linked%%
-[[/div]]
-[[/div]]
-[[/module]]
-[[div_ class="menu-item" style="text-align:right;"]]
-…[[[new-entry|看更多]]]
-[[/div]]
-[[/collapsible]]
-[[/div]]
-[[/div]]
-
 [[div class="side-block"]]
 [[div class="heading"]]
 網站連結
@@ -220,33 +194,3 @@ SCP檔案
 [[/collapsible]]
 [[/div]]
 [[/div]]
-[!-- 標籤雲區 --]
-[[div class="side-block tag-cloud-list"]]
-[[div id="sb_scp"]]
-[[collapsible show="標籤雲" hide="標籤雲"]]
-[[module TagCloud minFontSize="80%" maxFontSize="200%"  maxColor="8,8,64" minColor="100,100,128" target="system:page-tags" limit="30"]]
-[[/collapsible]]
-[[/div]]
-[[/div]]
-
-------
-[!-- 多語言模塊 --]
-[[module CSS]]
-iframe.scpnet-interwiki-frame { height: 0; }
-[[/module]]
-
-
-[[include :scp-zh-tr:nav:interwiki
-| lang=zh-tr
-| community=scp
-]]
-
-[[include :scp-zh-tr:component:interwiki-style
-| priority=0
-| theme=http://scp-zh-tr.wdfiles.com/local--code/component%3Atheme-new/1
-]]
-[[a href="##" class="close-menu"]]
-[[image black.png style="z-index:-1; opacity: 0.3;"]]
-[[/a]]
-
-[[include :scp-zh-tr:component:new-work-list-fixing sigma=--]]
