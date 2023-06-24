@@ -1,9 +1,9 @@
 @charset "utf-8";
  
-@import url('http://www.scp-zh-tr.wikidot.com/local--files/component:theme/font-bauhaus.css');
-@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
-@import url('http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css');
-@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('https://scp-zh-tr.wikidot.com/local--files/component:theme/font-bauhaus.css');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
  
  /*
     SCP Sigma 9
@@ -45,7 +45,7 @@ h2, h3, h4, h5, h6, h7 {
     border-color: #bbb;
 }
 ul {
-    /* list-style-image: url(http://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/bullet.gif); */
+    /* list-style-image: url(https://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/bullet.gif); */
     list-style: square;
 }
 #top-bar ul {
@@ -105,7 +105,7 @@ body {
     color: #333;
 }
 div#container-wrap {
-    background: url(http://www.scp-zh-tr.wikidot.com/local--files/component:theme/body_bg.png) top left repeat-x;
+    background: url(https://scp-zh-tr.wikidot.com/local--files/component:theme/body_bg.png) top left repeat-x;
 }
  
 sup { 
@@ -118,7 +118,7 @@ sup {
     position: relative;
     z-index: 10;
     padding-bottom: 22px; /* FOR MENU */
-    background: url(http://www.scp-zh-tr.wikidot.com/local--files/component:theme/logo.png) 10px 40px no-repeat;
+    background: url(https://scp-zh-tr.wikidot.com/local--files/component:theme/logo.png) 10px 40px no-repeat;
 }
 #search-top-box {
     position: absolute;
@@ -387,7 +387,7 @@ sup {
 }
  
 #side-bar .collapsible-block-folded {
-    background: url(http://www.scp-zh-tr.wikidot.com/local--files/nav:side/expand.png) 0 2px no-repeat;
+    background: url(https://scp-zh-tr.wikidot.com/local--files/nav:side/expand.png) 0 2px no-repeat;
 }
 #side-bar .collapsible-block-link {
     margin-left: 15px;
@@ -436,17 +436,17 @@ sup {
 .yui-navset .yui-nav a,
 .yui-navset .yui-navset-top .yui-nav a {
     background-color:#d8d8d8;
-    background-image: url(http://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/yuitabs.png);
+    background-image: url(https://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/yuitabs.png);
 }
 .yui-navset .yui-nav .selected a,
 .yui-navset .yui-nav .selected a:focus, /* no focus effect for selected */
 .yui-navset .yui-nav .selected a:hover { /* no hover effect for selected */
-    background:#700 url(http://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/yuitabs.png) repeat-x left -1400px; /* selected tab background */
+    background:#700 url(https://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/yuitabs.png) repeat-x left -1400px; /* selected tab background */
     color:#fff;
 }
 .yui-navset .yui-nav a:hover,
 .yui-navset .yui-nav a:focus {
-    background:#d88 url(http://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/yuitabs.png) repeat-x left -1300px;
+    background:#d88 url(https://d3g0gp89917ko0.cloudfront.net/v--3b8418686296/common--theme/shiny/images/yuitabs.png) repeat-x left -1300px;
     text-decoration: none;
 }
 .yui-navset .yui-nav,
@@ -546,7 +546,7 @@ div.sexy-box div.image-container img {
 }
 .content-panel .panel-body {
     padding: 5px 10px;
-    background: #fff9f0 url(http://www.scp-zh-tr.wikidot.com/local--files/component:theme/panel-bg-gradient-reverse.png) bottom repeat-x;
+    background: #fff9f0 url(https://scp-zh-tr.wikidot.com/local--files/component:theme/panel-bg-gradient-reverse.png) bottom repeat-x;
     /* box-shadow: 1px 2px 3px rgba(0,0,0,.2) inset */
 }
 .content-panel .panel-footer {
@@ -896,7 +896,7 @@ box-shadow: -1px -1px 2px #333;
     font-family: monospace;
     font-style: normal;
     font-weight: normal;
-    background-image: url(http://www.scp-zh-tr.wikidot.com/local--files/component%3Atheme/dot.png), none;
+    background-image: url(https://scp-zh-tr.wikidot.com/local--files/component%3Atheme/dot.png), none;
     background-repeat: repeat-x;
     padding: 0.5em 0 0;
     background-color:transparent;
@@ -912,7 +912,7 @@ box-shadow: -1px -1px 2px #333;
     font-family: monospace;
     font-style: normal;
     font-weight: normal;
-    background-image: url(http://www.scp-zh-tr.wikidot.com/local--files/component%3Atheme/dot.png), none;
+    background-image: url(https://scp-zh-tr.wikidot.com/local--files/component%3Atheme/dot.png), none;
     background-repeat: repeat-x;
     padding: 0.5em 0 0;
     background-color:transparent;
@@ -1478,10 +1478,10 @@ iframe.scpnet-interwiki-frame {
     margin: 0;
 }
 #side-bar .collapsible-block-folded {
-    background: url(http://scp-wiki-de.wdfiles.com/local--files/component:theme/expand.png) 0 1px no-repeat;
+    background: url(https://scp-wiki-de.wdfiles.com/local--files/component:theme/expand.png) 0 1px no-repeat;
 }
 #side-bar .collapsible-block-unfolded {
-    background: url(http://scp-wiki-de.wdfiles.com/local--files/component:theme/collapse.png) 0 1px no-repeat;
+    background: url(https://scp-wiki-de.wdfiles.com/local--files/component:theme/collapse.png) 0 1px no-repeat;
 }
 #side-bar .collapsible-block-link, #side-bar .collapsible-block-unfolded-link .collapsible-block-link {
     color: #600;
