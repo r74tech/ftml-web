@@ -14,6 +14,7 @@ specifiers:
   hfmath: ^0.0.2
   include-media: ^2.0.0
   node-sass-import-once: ^1.2.0
+  postcss: ^8.4.24
   postcss-merge-queries: ^1.0.3
   sass: ^1.63.6
   sass-loader: ^13.3.2
@@ -23,7 +24,7 @@ specifiers:
   throttle-typescript: ^1.1.0
   tippy.js: 6.3.7
   ts-debounce: ^4.0.0
-  typescript: ^4.9.5
+  typescript: ^5.1.3
   vite: ^4.3.9
   webpack: ^5.88.0
   yaml: ^2.3.1
@@ -34,7 +35,7 @@ dependencies:
   '@types/wicg-file-system-access': 2020.9.6
   '@vscode-ftml/ftml-wasm': 1.18.1
   '@wikijump/ftml-components': "link:modules\ftml-components"
-  autoprefixer: 10.4.14
+  autoprefixer: 10.4.14_postcss@8.4.24
   codemirror: 6.0.1
   comlink: 4.4.1
   esbuild: 0.17.19
@@ -42,6 +43,7 @@ dependencies:
   hfmath: 0.0.2
   include-media: 2.0.0
   node-sass-import-once: 1.2.0
+  postcss: 8.4.24
   postcss-merge-queries: 1.0.3
   svelte: 3.59.2
   svelte-store: 0.0.2
@@ -49,7 +51,7 @@ dependencies:
   throttle-typescript: 1.1.0
   tippy.js: 6.3.7
   ts-debounce: 4.0.0
-  typescript: 4.9.5
+  typescript: 5.1.3
   vite: 4.3.9_zmmwlkgdgahyanikmh4fscbaai
   yaml: 2.3.1
 
@@ -638,7 +640,7 @@ packages:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: false
 
-  /autoprefixer/10.4.14:
+  /autoprefixer/10.4.14_postcss@8.4.24:
     resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -650,6 +652,7 @@ packages:
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
+      postcss: 8.4.24
       postcss-value-parser: 4.2.0
     dev: false
 
@@ -1591,9 +1594,9 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /typescript/4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.1.3:
+    resolution: {integrity: sha512-XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: false
 
