@@ -225,8 +225,9 @@ const handleShareButtonClick = async () => {
       console.error('Error sending data to GAS:', error);
     }
   } else {
+    const shortId = isSharePath;
     const dataToSend = {
-      shortid: isSharePath,
+      shortid: shortId,
       title: edittitleField.value,
       source: editpageField.value
     };
@@ -322,7 +323,7 @@ const handleDOMContentLoaded = async () => {
 
 
 async function getDataFromGAS(shortId) {
-  const apiUrl = `https://script.google.com/macros/s/AKfycbxSUyNRMa0k3LJVLJbQ8UgZrj1SrNtO-BhSkSNJPoZ3G4Ljl2bVDGVYbZ_6h-gCUf3nzg/exec?shortid=${shortId}`;
+  const apiUrl = `https://script.google.com/macros/s/AKfycbxZUHdkLbrd6OtbCLEgBRqcd8gi3qmEQg7fmxewaOMCEu9skF9xoTj3pRJ1cx7kP-hofQ/exec?shortid=${shortId}`;
 
   try {
     const response = await fetch(apiUrl);
@@ -337,6 +338,25 @@ async function getDataFromGAS(shortId) {
   }
 }
 
+
+const postDataToGAS = async (data) => {
+  const url = 'https://script.google.com/macros/s/AKfycbxZUHdkLbrd6OtbCLEgBRqcd8gi3qmEQg7fmxewaOMCEu9skF9xoTj3pRJ1cx7kP-hofQ/exec';
+
+  // データを x-www-form-urlencoded 形式にエンコードする
+  const formData = new URLSearchParams(data).toString();
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: formData
+  });
+
+  return response.json();
+};
+
+
 function getCurrentShortId() {
   const path = window.location.pathname;
   if (path.startsWith('/share/')) {
@@ -345,19 +365,6 @@ function getCurrentShortId() {
   }
   return null;
 }
-
-const postDataToGAS = async (data) => {
-  const url = 'https://script.google.com/macros/s/AKfycbxSUyNRMa0k3LJVLJbQ8UgZrj1SrNtO-BhSkSNJPoZ3G4Ljl2bVDGVYbZ_6h-gCUf3nzg/exec';
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
-  return response.json();
-};
-
 // Event listeners...
 document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 if (editpageField) editpageField.addEventListener('input', handleEditpageInput);

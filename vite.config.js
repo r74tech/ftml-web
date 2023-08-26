@@ -11,7 +11,7 @@ import path from 'path'
 const root = join(process.cwd(), './src');
 module.exports = {
   mode: process.env.MODE,
-  base: './',
+  base: '/',
   root: root,
   publicDir: "./public",
   server: {
@@ -29,7 +29,7 @@ module.exports = {
     target: 'es2020',
     polyfillDynamicImport: false,
     minify: process.env.MODE === 'development' ? false : 'terser',
-    base: '',
+    base: '/',
     outDir: join(process.cwd(), 'dist'),
     rollupOptions: {
       input: {
