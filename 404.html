@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikitext Previewer</title>
+  <style type="text/css" id="internal-style">
+    @import url(https://d3g0gp89917ko0.cloudfront.net/v--3e3a6f7dbcc9/common--theme/base/css/style.css);
+    /* theme */
+  </style>
+  <style id="collapsible"></style>
+  <style id="innercss"></style>
+  <style id="theme"></style>
+  <style id="init"></style>
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6712436328053318"
+     crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9CR0QHZF8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q9CR0QHZF8');
+  </script>
+  <script type="module" crossorigin src="/main-262aee5b.js"></script>
+  <link rel="stylesheet" href="/index-4036a043.css">
+</head>
+
+<body id="skrollr-body">
+  <a name="page-top"></a>
+  <div id="container-wrap-wrap">
+    <div id="container-wrap">
+      <div id="container">
+        <div id="header">
+          <h1><a href="/" class="active"><span>Wikitext Previewer</span></a></h1>
+          <h2><span></span></h2>
+          <div id="search-top-box" class="form-search">
+            <form id="search-top-box-form" action="dummy" class="input-append">
+              <input id="search-top-box-input" class="text empty search-query" type="text" size="15" name="query"
+                value="Search this site"
+                onfocus="if(YAHOO.util.Dom.hasClass(this, 'empty')){YAHOO.util.Dom.removeClass(this,'empty'); this.value='';}"><input
+                class="button btn" type="submit" name="search" value="Search">
+            </form>
+          </div>
+          <div id="top-bar">
+          </div>
+          <div id="login-status">
+            <span class="wj-user-info printuser">
+              <a class="wj-user-info-link" href="javascript:;">
+                <span class="wj-karma" data-karma="5">
+                  <svg class="wj-sprite sprite-wj-karma" viewBox="0 0 64 114">
+                    <use href="/files--static/media/ui.svg#wj-karma"></use>
+                  </svg>
+                </span>
+                <img class="wj-user-info-avatar small" src="/files--static/media/default-avatar.png" alt="Default">
+              </a>Default</span>
+            | <a id="my-account" href="javascript:;">My accounts</a> <a id="account-topbutton" href="javascript:;">▼</a>
+            <div id="account-options" style="display: none;">
+              <ul>
+                <li><a href="https://www.wikidot.com/account/activity">Activity</a></li>
+                <li><a href="https://www.wikidot.com/account/messages">Messages</a></li>
+                <li><a href="https://www.wikidot.com/account/sites">Sites</a></li>
+                <li><a href="https://www.wikidot.com/account/settings">Settings</a></li>
+                <li><a href="https://www.wikidot.com/account/upgrade">Upgrade</a></li>
+                <li><a href="javascript:;">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="header-extra-div-1"><span></span></div>
+          <div id="header-extra-div-2"><span></span></div>
+          <div id="header-extra-div-3"><span></span></div>
+        </div>
+        <div id="content-wrap">
+          <div id="side-bar">
+          </div>
+          <div id="main-content">
+            <div id="page-title"></div>
+            <div id="page-content">
+              loading...
+            </div>
+            <div id="page-info-break">
+              <div id="page-styles"></div>
+              <img class="wj-image" src="https://apiwd.scp-jp.org/endpoint"
+                style="width: 1px;visibility: hidden;user-select: none;">
+                <div id="page-info"></div>
+            </div>
+            <div id="action-area" style="display: block;">
+              <h1 id="actionarea-title">Edit Page</h1>
+              <div>
+                <form id="edit-page-form">
+                  <table class="form" style="margin: 0.5em auto 1em 0">
+                    <tbody>
+                      <tr>
+                        <td id="actionarea-titleinput">
+                          Page title:
+                        </td>
+                        <td>
+                          <input class="text" id="edit-page-title" name="title" type="text" size="35" maxlength="128"
+                            style="font-weight: bold; font-size: 130%;">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <textarea id="edit-page-textarea" name="source" rows="20" cols="60" style="width: 95%;"></textarea>
+                  </div>
+                  <table class="edit-page-bottomtable" style="padding: 2px 0; border: none; width: 97%;">
+                    <tbody>
+                      <tr>
+                        <td style="border: none; padding: 0 5px;">
+                          <div id="lock-info" class="alert alert-info">
+                            <ul id="actionarea-message">
+                              <li>Wikitext is previewed in real time.</li>
+                              <li>Automatic backup is enabled.</li>
+                              <li>Save button to save the file.</li>
+                              <li>The display of Sidebar can be changed from Advanced Settings.</li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="form-table">
+                    <tbody>
+                      <tr class="form-row">
+                        <td class="form-labels" style="width: 100px;">
+                          <span class="form-label" id="actionarea-langselect">Language:</span>
+                        </td>
+                        <td class="form-values">
+                          <span class="form-value field-type">
+                            <select name="field-type" class="form-select" id="lang-select">
+                            </select>
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="buttons alignleft">
+                    <input type="button" name="save" id="actionarea-save" class="btn btn-primary" value="Save">
+                    <input type="button" name="share/share update" id="actionarea-share" class="btn btn-primary"
+                      value="Share/Share update">
+                  </div>
+                  <details>
+                    <summary id="actionarea-advancedsettings">Advanced Settings</summary>
+                    <h2 id="actionarea-advancedsettingstitle">Edit Sidebar</h2>
+                    <div>
+                      <textarea id="edit-side-textarea" name="source" rows="20" cols="60"
+                        style="width: 95%;"></textarea>
+                    </div>
+                  </details>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer" style="display: block; visibility: visible;">
+          Powered by <a href="https://scp-jp.org/">SCP-JP.org</a>
+        </div>
+        <div id="license-area">
+          Wikitext Previewer is developed and maintained by <a href="https://github.com/RTa-technology"
+            target="_blank">RTa-technology</a>. <a href="https://github.com/RTa-technology/ftml-web" target="_blank">Code</a>
+          License: <a href="https://www.gnu.org/licenses/" target="_blank">AGPL-3.0 license</a><br>
+          Copyright (C) 2022- Zokhoi &amp; other vscode-ftml contributors (<a
+            href="https://github.com/Zokhoi/vscode-ftml">vscode-ftml</a>)<br>
+          Copyright (C) 2022- RTa-technology &amp; other ftml-web contributors.
+        </div>
+        <div id="extrac-div-1"><span></span></div>
+        <div id="extrac-div-2"><span></span></div>
+        <div id="extrac-div-3"><span></span></div>
+      </div>
+    </div>
+    <div id="extra-div-1"><span></span></div>
+    <div id="extra-div-2"><span></span></div>
+    <div id="extra-div-3"><span></span></div>
+    <div id="extra-div-4"><span></span></div>
+    <div id="extra-div-5"><span></span></div>
+    <div id="extra-div-6"><span></span></div>
+  </div>
+
+
+</body>
+
+</html>
