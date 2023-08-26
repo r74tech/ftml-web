@@ -1,7 +1,8 @@
 #!/usr/bin/node
 console.time('Bundling time');
-const {build} = require('vite');
-const {join} = require('path');
+const { build } = require('vite');
+const { join } = require('path');
+const fs = require('fs');
 
 /** @type 'production' | 'development' | 'test' */
 const mode = process.env.MODE || 'production';
@@ -11,18 +12,19 @@ const configs = [
   // join(process.cwd(), 'scripts/config.browser.vite.js'),
 ];
 
-
 /**
  * Run `vite build` for config file
  * @param {string} configFile
  * @return {Promise<RollupOutput | RollupOutput[]>}
  */
-const buildByConfig = (configFile) => build({configFile, mode});
-
-
+const buildByConfig = (configFile) => build({ configFile, mode });
 
 Promise.all(configs.map(buildByConfig))
-  .then(() => console.timeEnd('Bundling time'))
+  .then(() => {
+    const distDir = join(process.cwd(), 'dist');
+    fs.copyFileSync(join(distDir, 'index.html'), join(distDir, '404.html'));
+    console.timeEnd('Bundling time');
+  })
   .catch(e => {
     console.error(e);
     process.exit(1);
