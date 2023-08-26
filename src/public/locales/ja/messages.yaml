@@ -4,8 +4,10 @@ actionarea:
   message:
     - "Wikitextをリアルタイムに反映します。"
     - "自動バックアップが可能です。"
-    - "Saveボタンでファイルを保存します。"
+    - "saveボタンでファイルを保存します。"
     - "サイドバーの表示は、Advanced Settingsから変更可能です。"
+    - "リンク共有はshare/share updateボタンから行うことができます。"
+    - "Revision機能は実装予定です。"
   save: "save"
   advancedsettings: "Advanced Settings"
   advancedsettingstitle: "Edit Sidebar"
