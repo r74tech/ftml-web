@@ -204,47 +204,27 @@ const handleEditsaveButtonClick = async () => {
 
 // 共有ボタンを押したときの処理
 const handleShareButtonClick = async () => {
-  const isSharePath = getCurrentShortId();
-  if (!isSharePath) {
-    const shortId = generateShortId(); // Replace this with your actual short ID generation logic
-    const dataToSend = {
-      shortid: shortId,
-      title: edittitleField.value,
-      source: editpageField.value
-    };
-    console.debug('Sending data to GAS:', dataToSend);
-    try {
-      const response = await postDataToGAS(dataToSend);
-      if (response.error) {
-        // Handle error if needed
-        console.error('Error sending data to GAS:', response.error);
-      } else {
-        window.location.href = `/share/${shortId}`;
-      }
-    } catch (error) {
-      console.error('Error sending data to GAS:', error);
+  const shortId = getCurrentShortId() || generateShortId();
+  const dataToSend = {
+    shortid: shortId,
+    title: edittitleField.value,
+    source: `'${editpageField.value}` // Add a newline at the end of the source
+  };
+
+  console.debug('Sending data to GAS:', dataToSend);
+
+  try {
+    const response = await postDataToGAS(dataToSend);
+    if (response.error) {
+      console.error('Error sending data to GAS:', response.error);
+    } else {
+      window.location.href = `/share/${shortId}`;
     }
-  } else {
-    const shortId = isSharePath;
-    const dataToSend = {
-      shortid: shortId,
-      title: edittitleField.value,
-      source: editpageField.value
-    };
-    console.debug('Sending data to GAS:', dataToSend);
-    try {
-      const response = await postDataToGAS(dataToSend);
-      if (response.error) {
-        // Handle error if needed
-        console.error('Error sending data to GAS:', response.error);
-      } else {
-        window.location.href = `/share/${shortId}`;
-      }
-    } catch (error) {
-      console.error('Error sending data to GAS:', error);
-    }
+  } catch (error) {
+    console.error('Error sending data to GAS:', error);
   }
 };
+
 
 
 
