@@ -8,6 +8,8 @@ import { debounce } from 'ts-debounce';
 import shortid from 'shortid';
 import ftmlWorker from './ftml.web.worker.js?bundled-worker&dataurl';
 
+const GAS_API_URL = "https://script.google.com/macros/s/AKfycbzj12BQxRif0EWFU3xVZ5j0QPOVkFVxaIHjR-j8--XbTCf-PCvcF9buzhWdiidmgyxHNg/exec"
+
 const ftml = new Worker(ftmlWorker, {
   type: 'module',
 });
@@ -45,6 +47,7 @@ const edittitleField = document.getElementById('edit-page-title');
 const editsideField = document.getElementById('edit-side-textarea');
 const editsaveButton = document.getElementById('actionarea-save');
 const shareButton = document.getElementById('actionarea-share');
+const historyButton = document.getElementById('actionarea-history');
 const langSelect = document.getElementById('lang-select');
 
 document.querySelector("head > style#innercss")!.innerHTML = css;
@@ -113,6 +116,14 @@ const generateShortId = () => {
   // Return the generated short ID
   return shortid.generate();
 };
+
+const setTextContentForElement = (selector, text) => {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.textContent = text;
+  }
+};
+
 
 // Event Handlers
 const handleEditpageInput = debounce((event) => {
@@ -208,7 +219,8 @@ const handleShareButtonClick = async () => {
   const dataToSend = {
     shortid: shortId,
     title: edittitleField.value,
-    source: `'${editpageField.value}` // Add a newline at the end of the source
+    source: `'${editpageField.value}`, // Add a newline at the end of the source
+    createdby: 'anonymous',
   };
 
   console.debug('Sending data to GAS:', dataToSend);
@@ -223,6 +235,22 @@ const handleShareButtonClick = async () => {
   } catch (error) {
     console.error('Error sending data to GAS:', error);
   }
+};
+
+
+// 履歴ボタンを押したときの処理
+const handleHistoryButtonClick = async () => {
+  if (!getCurrentShortId()) return;
+
+  const shortId = getCurrentShortId();
+  const historyData = await getHistoryFromGAS(shortId);
+
+  if (historyData.error) {
+    console.error(historyData.error);
+    return;
+  }
+
+  renderHistoryTable(shortId, historyData.data);
 };
 
 
@@ -252,7 +280,7 @@ const displayLocalStorageData = (itemName = "FtmlStorage") => {
   }
 };
 
-const displayData = (data) => {
+const displayData = (data: any) => {
   console.log(data);
   edittitleField.value = data.title;
   editpageField.value = data.source;
@@ -299,11 +327,28 @@ const handleDOMContentLoaded = async () => {
   } else {
     displayLocalStorageData();
   }
+
+  document.body.addEventListener('click', function (e) {
+    if (e.target && e.target.className === 'view-link') {
+      if (document.getElementById('page-version-info')) {
+        const pageVersionInfo = document.getElementById('page-version-info');
+        pageVersionInfo.parentNode.removeChild(pageVersionInfo);
+      }
+      const shortId = e.target.dataset.shortId;
+      const revisionId = e.target.dataset.revisionId;
+      displayRevisionData(shortId, revisionId);
+    }
+    if (e.target && e.target.className === 'source-link') {
+      const shortId = e.target.dataset.shortId;
+      const revisionId = e.target.dataset.revisionId;
+      displayRevisionSource(shortId, revisionId);
+    }
+  });
 };
 
 
-async function getDataFromGAS(shortId) {
-  const apiUrl = `https://script.google.com/macros/s/AKfycbxZUHdkLbrd6OtbCLEgBRqcd8gi3qmEQg7fmxewaOMCEu9skF9xoTj3pRJ1cx7kP-hofQ/exec?shortid=${shortId}`;
+async function getDataFromGAS(shortId: string) {
+  const apiUrl = `${GAS_API_URL}?shortid=${shortId}`;
 
   try {
     const response = await fetch(apiUrl);
@@ -318,9 +363,40 @@ async function getDataFromGAS(shortId) {
   }
 }
 
+async function getHistoryFromGAS(shortId: string) {
+  const apiUrl = `${GAS_API_URL}?shortid=${shortId}&history=true`;
 
-const postDataToGAS = async (data) => {
-  const url = 'https://script.google.com/macros/s/AKfycbxZUHdkLbrd6OtbCLEgBRqcd8gi3qmEQg7fmxewaOMCEu9skF9xoTj3pRJ1cx7kP-hofQ/exec';
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data from GAS. Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data from GAS:', error);
+    return { error: 'Failed to fetch data from GAS' };
+  }
+}
+
+async function getRevisionFromGAS(shortId: string, revisionId: string) {
+  const apiUrl = `${GAS_API_URL}?shortid=${shortId}&revisionid=${revisionId}&revision=true`;
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data from GAS. Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data from GAS:', error);
+    return { error: 'Failed to fetch data from GAS' };
+  }
+}
+
+const postDataToGAS = async (data: any) => {
+  const url = GAS_API_URL;
 
   // データを x-www-form-urlencoded 形式にエンコードする
   const formData = new URLSearchParams(data).toString();
@@ -345,6 +421,170 @@ function getCurrentShortId() {
   }
   return null;
 }
+
+function renderHistoryTable(shortId: string, historyArray: Array<any>) {
+  const tableBody = document.querySelector('.page-history tbody');
+
+  // Clear the previous content
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
+
+  // Header row
+  const headerRow = document.createElement('tr');
+  const headers = ['rev.', '', 'flags', 'actions', 'by', 'date', 'comments'];
+  headers.forEach(header => {
+    const td = document.createElement('td');
+    td.innerText = header;
+    headerRow.appendChild(td);
+  });
+  tableBody.appendChild(headerRow);
+
+  // Data rows
+  historyArray.forEach((item, index) => {
+    console.debug(item);
+
+    const row = document.createElement('tr');
+    row.id = `revision-row-${item.revisionId}`;
+
+    // Revision TD
+    const revTd = document.createElement('td');
+    revTd.innerText = index;  // revision index should start from 1
+    row.appendChild(revTd);
+
+    // Empty TD for radio buttons
+    const emptyTd = document.createElement('td');
+    row.appendChild(emptyTd);
+
+    // Flags TD (Placeholder as no specific flag data provided)
+    const flagsTd = document.createElement('td');
+    flagsTd.innerText = "N/A"; // Replace with actual flag data if available
+    row.appendChild(flagsTd);
+
+    // Actions TD (links for view and source)
+    const actionsTd = document.createElement('td');
+    actionsTd.style.width = "5em";
+    actionsTd.className = "optionstd";
+    // Vボタンの追加
+    const viewLink = document.createElement('a');
+    viewLink.innerText = "V";
+    viewLink.dataset.shortId = shortId;
+    viewLink.dataset.revisionId = item.revisionId.toString();
+    viewLink.href = "javascript:void(0)";
+    viewLink.className = "view-link";
+    actionsTd.appendChild(viewLink);
+
+    // Sボタンの追加
+    const sourceLink = document.createElement('a');
+    sourceLink.innerText = "S";
+    sourceLink.dataset.shortId = shortId;
+    sourceLink.dataset.revisionId = item.revisionId.toString();
+    sourceLink.href = "javascript:void(0)";
+    sourceLink.className = "source-link";
+    actionsTd.appendChild(sourceLink);
+
+    row.appendChild(actionsTd);
+
+    // User TD
+    const userTd = document.createElement('td');
+    userTd.innerText = item.createdBy; // using createdBy from the data for username
+    row.appendChild(userTd);
+
+    // Date TD
+    const dateTd = document.createElement('td');
+    dateTd.innerText = new Date(item.createdAt).toLocaleString();
+    row.appendChild(dateTd);
+
+    // Comments TD (Placeholder as no specific comment data provided)
+    const commentTd = document.createElement('td');
+    commentTd.innerText = "N/A"; // Replace with actual comment data if available
+    row.appendChild(commentTd);
+
+    tableBody.appendChild(row);
+  });
+}
+
+async function displayRevisionData(shortId: string, revisionId: string) {
+  const revisionData = await getRevisionFromGAS(shortId, revisionId);
+
+  console.debug(revisionData.data);
+
+  if (revisionData.data.source) {
+    ftml.postMessage({ value: revisionData.data.source, type: "page" });
+  }
+  if (revisionData.data.title) {
+    const pageTitle = document.querySelector("#page-title");
+    if (pageTitle) pageTitle.innerHTML = revisionData.data.title;
+  }
+  // リビジョン情報の動的生成
+  createPageVersionInfo(revisionData.data);
+}
+
+async function displayRevisionSource(shortId: string, revisionId: string) {
+  const revisionData = await getRevisionFromGAS(shortId, revisionId);
+
+  if (revisionData && revisionData.data) {
+    // ソース情報の表示
+    const historyElement = document.getElementById('history-subarea');
+    if (historyElement) {
+      historyElement.style.display = "block";
+    }
+
+    setTextContentForElement('.page-source-title', `Page Source Revision Number: ${revisionData.data.revisionNum}`);
+    setTextContentForElement('.page-source', revisionData.data.source || 'No source available');
+  }
+}
+
+function hideRevisionSource() {
+  const sourceElement = document.getElementById('revision-source');
+  if (sourceElement) {
+    sourceElement.style.display = "none";
+  }
+}
+
+
+function createPageVersionInfo(revisionData) {
+  const mainContent = document.getElementById('main-content');
+  const pageVersionInfo = document.createElement('div');
+  pageVersionInfo.id = "page-version-info";
+  pageVersionInfo.style.top = "0px";
+
+  const table = document.createElement('table');
+  const tbody = document.createElement('tbody');
+
+  const rowsData = [
+    ["Revision no.:", revisionData.revisionNum],
+    ["Date created:", revisionData.createdAt ? (new Date(revisionData.createdAt)).toISOString().slice(0, 19).replace('T', ' ').replace(/-/g, '/') : 'N/A'],
+    ["By:", revisionData.createdBy || 'N/A'],
+    ["Page name:", revisionData.title || 'N/A']
+  ];
+
+  rowsData.forEach(rowData => {
+    const row = document.createElement('tr');
+    rowData.forEach(cellData => {
+      const cell = document.createElement('td');
+      cell.textContent = cellData;
+      row.appendChild(cell);
+    });
+    tbody.appendChild(row);
+  });
+
+  table.appendChild(tbody);
+  pageVersionInfo.appendChild(table);
+
+  const closeButton = document.createElement('a');
+  closeButton.href = "javascript:void(0)";
+  closeButton.textContent = "Close this box";
+  closeButton.addEventListener('click', () => {
+    mainContent.removeChild(pageVersionInfo);
+  });
+  pageVersionInfo.appendChild(closeButton);
+  mainContent.appendChild(pageVersionInfo);
+}
+
+
+
+
 // Event listeners...
 document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 if (editpageField) editpageField.addEventListener('input', handleEditpageInput);
@@ -353,3 +593,4 @@ if (edittitleField) edittitleField.addEventListener('input', handleEdittitleInpu
 if (langSelect) langSelect.addEventListener('change', handleLangSelectChange);
 if (editsaveButton) editsaveButton.addEventListener('click', handleEditsaveButtonClick);
 if (shareButton) shareButton.addEventListener('click', handleShareButtonClick);
+if (historyButton) historyButton.addEventListener('click', handleHistoryButtonClick);
