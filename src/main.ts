@@ -124,6 +124,18 @@ const setTextContentForElement = (selector, text) => {
   }
 };
 
+const getOrCreateShortId = () => {
+  const accountKey = 'accountShortId';
+  let shortId = localStorage.getItem(accountKey);
+
+  if (!shortId) {
+    shortId = generateShortId();
+    localStorage.setItem(accountKey, shortId);
+  }
+
+  return shortId;
+};
+
 
 // Event Handlers
 const handleEditpageInput = debounce((event) => {
@@ -220,7 +232,7 @@ const handleShareButtonClick = async () => {
     shortid: shortId,
     title: edittitleField.value,
     source: `'${editpageField.value}`, // Add a newline at the end of the source
-    createdby: 'anonymous',
+    createdby: getOrCreateShortId(),
   };
 
   console.debug('Sending data to GAS:', dataToSend);
@@ -300,6 +312,15 @@ const displayData = (data: any) => {
 
 const handleDOMContentLoaded = async () => {
   const WPconfigItem = localStorage.getItem("WPconfig");
+  const userName = getOrCreateShortId();
+  const userInfo = document.querySelector(".wj-user-info.printuser");
+  if (userInfo) {
+    userInfo.childNodes.forEach(node => {
+      if (node.nodeType === 3 && node.nodeValue.trim() === "Default") { // 3 はテキストノードを意味する
+        node.nodeValue = userName;
+      }
+    });
+  }
   if (WPconfigItem) {
     const WPconfig = JSON.parse(WPconfigItem);
     loadlocales(WPconfig.lang);
@@ -347,61 +368,39 @@ const handleDOMContentLoaded = async () => {
 };
 
 
-async function getDataFromGAS(shortId: string) {
-  const apiUrl = `${GAS_API_URL}?shortid=${shortId}`;
+async function fetchDataFromGAS(params) {
+  const apiUrl = `${GAS_API_URL}?${new URLSearchParams(params).toString()}`;
 
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch data from GAS. Status: ${response.status}`);
     }
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error('Error fetching data from GAS:', error);
     return { error: 'Failed to fetch data from GAS' };
   }
 }
 
-async function getHistoryFromGAS(shortId: string) {
-  const apiUrl = `${GAS_API_URL}?shortid=${shortId}&history=true`;
-
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from GAS. Status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data from GAS:', error);
-    return { error: 'Failed to fetch data from GAS' };
-  }
+// 上記のヘルパーを利用した関数たち
+async function getDataFromGAS(shortId) {
+  return fetchDataFromGAS({ shortid: shortId });
 }
 
-async function getRevisionFromGAS(shortId: string, revisionId: string) {
-  const apiUrl = `${GAS_API_URL}?shortid=${shortId}&revisionid=${revisionId}&revision=true`;
-
-  try {
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from GAS. Status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data from GAS:', error);
-    return { error: 'Failed to fetch data from GAS' };
-  }
+async function getHistoryFromGAS(shortId) {
+  return fetchDataFromGAS({ shortid: shortId, history: true });
 }
 
-const postDataToGAS = async (data: any) => {
-  const url = GAS_API_URL;
+async function getRevisionFromGAS(shortId, revisionId) {
+  return fetchDataFromGAS({ shortid: shortId, revisionid: revisionId, revision: true });
+}
 
+async function postDataToGAS(data) {
   // データを x-www-form-urlencoded 形式にエンコードする
   const formData = new URLSearchParams(data).toString();
 
-  const response = await fetch(url, {
+  const response = await fetch(GAS_API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -410,7 +409,7 @@ const postDataToGAS = async (data: any) => {
   });
 
   return response.json();
-};
+}
 
 
 function getCurrentShortId() {
@@ -554,7 +553,7 @@ function createPageVersionInfo(revisionData) {
 
   const rowsData = [
     ["Revision no.:", revisionData.revisionNum],
-    ["Date created:", revisionData.createdAt ? (new Date(revisionData.createdAt)).toISOString().slice(0, 19).replace('T', ' ').replace(/-/g, '/') : 'N/A'],
+    ["Date created:", revisionData.createdAt ? formatDateForRevisionData(revisionData.createdAt) : 'N/A'],
     ["By:", revisionData.createdBy || 'N/A'],
     ["Page name:", revisionData.title || 'N/A']
   ];
@@ -583,6 +582,11 @@ function createPageVersionInfo(revisionData) {
 }
 
 
+function formatDateForRevisionData(dateString) {
+  return dateString
+    ? (new Date(dateString)).toISOString().slice(0, 19).replace('T', ' ').replace(/-/g, '/')
+    : 'N/A';
+}
 
 
 // Event listeners...
