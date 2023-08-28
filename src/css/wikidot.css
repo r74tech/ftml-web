@@ -130,3 +130,10 @@ a#account-topbutton:focus + div#account-options {
 code, .code {
     background-color: unset;
 }
+
+#page-index {
+    background-color: #F3F3F3;
+	border: 1px solid #CCC;
+	padding: 0.5em 1em;
+	margin: 1em 0;
+}

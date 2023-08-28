@@ -327,6 +327,7 @@ const handleDOMContentLoaded = async () => {
   } else {
     loadlocales();
   }
+  populatePageIndexList();
 
   const url = new URL(window.location.href);
   const pathname = url.pathname;
@@ -588,6 +589,39 @@ function formatDateForRevisionData(dateString) {
     : 'N/A';
 }
 
+
+function populatePageIndexList() {
+  // ページのリストを表示する要素を取得
+  const pageIndexList = document.getElementById('page-index-list');
+
+  if (!pageIndexList) {
+    console.error('page-index-list element not found.');
+    return;
+  }
+
+  // ローカルストレージのすべてのキーを走査
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith('FtmlStorage[')) {
+      // shortId を抽出
+      const shortId = key.match(/\[([^\]]+)\]/)[1];
+
+      const data = JSON.parse(localStorage.getItem(key));
+      const title = data.title || 'Untitled';  // タイトルがない場合のデフォルト値
+
+      // 新しいリンク要素を作成
+      const linkElem = document.createElement('a');
+      linkElem.href = `/share/${shortId}`;
+      linkElem.textContent = title;
+      linkElem.target = "_blank";  // 新しいタブで開く
+
+      // リンク要素をリスト要素に追加
+      const listItem = document.createElement('li');
+      listItem.appendChild(linkElem);
+      pageIndexList.appendChild(listItem);
+    }
+  }
+}
 
 // Event listeners...
 document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
