@@ -137,3 +137,7 @@ code, .code {
 	padding: 0.5em 1em;
 	margin: 1em 0;
 }
+
+.page-source {
+    white-space: pre-wrap;
+}
