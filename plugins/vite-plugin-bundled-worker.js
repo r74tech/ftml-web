@@ -1,5 +1,5 @@
-const esbuild = require('esbuild');
-const { resolve } = require('path');
+import esbuild from 'esbuild';
+import { resolve } from 'path';
 
 const fileRegex = /\?bundled-worker(&.+)?$/;
 
@@ -16,7 +16,7 @@ const resolveInternal = (keypair) => {
   };
 };
 
-module.exports = function viteWorkerPlugin(cjs = false) {
+export default function viteWorkerPlugin(cjs = false) {
   /** @type import("vite").Plugin */
   const plugin = {
     name: 'bundle-workers',
@@ -38,15 +38,15 @@ module.exports = function viteWorkerPlugin(cjs = false) {
             resolveInternal({
               // 'ftml-wasm/vendor/ftml': resolve(
               //   __dirname,
-              //   '../package-wj/client/modules/ftml-wasm/vendor/ftml',
+              //   '../lib/ftml-wasm/vendor/ftml',
               // ),
               // 'ftml-wasm': resolve(
               //   __dirname,
-              //   '../package-wj/client/modules/ftml-wasm/src/index.ts',
+              //   '../lib/ftml-wasm/src/index.ts',
               // ),
               // 'threads-worker-module/src/worker-lib': resolve(
               //   __dirname,
-              //   '../package-wj/client/modules/threads-worker-module/src/worker-lib',
+              //   '../lib/threads-worker-module/src/worker-lib',
               // ),
             })
           ],
@@ -58,16 +58,19 @@ module.exports = function viteWorkerPlugin(cjs = false) {
             'window': 'globalThis',
             'import.meta.url': '""',
           },
+          loader: {
+            '.wasm': 'binary',
+          },
           ...(cjs
             ? {
-                format: 'cjs',
-                platform: 'node',
-                external: ['worker_threads'],
-              }
+              format: 'cjs',
+              platform: 'node',
+              external: ['worker_threads'],
+            }
             : {
-                format: 'iife',
-                platform: 'browser',
-              }),
+              format: 'iife',
+              platform: 'browser',
+            }),
         });
 
         let code, map;

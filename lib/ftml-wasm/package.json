@@ -1,0 +1,37 @@
+{
+  "name": "@vscode-ftml/ftml-wasm",
+  "license": "agpl-3.0-or-later",
+  "description": "WASM-JS bindings for FTML.",
+  "version": "1.18.1",
+  "keywords": [
+    "wikijump",
+    "ftml",
+    "wasm",
+    "rust"
+  ],
+  "scripts": {
+    "debug": "run-s debug:ftml debug:bind",
+    "debug:ftml": "cd ../../../ftml && cargo build --no-default-features --features \"html mathml\" --target wasm32-unknown-unknown",
+    "debug:bind": "cd ../../../ftml && wasm-bindgen --out-dir ../web/modules/ftml-wasm/vendor --target web --debug --keep-debug --omit-default-module-path ./target/wasm32-unknown-unknown/debug/ftml.wasm",
+    "compile": "run-s compile:ftml compile:bind compile:opt",
+    "compile:ftml": "cd ../../../ftml && cargo build --release --no-default-features --features \"html mathml\" --target wasm32-unknown-unknown",
+    "compile:bind": "cd ../../../ftml && wasm-bindgen --out-dir ../web/modules/ftml-wasm/vendor --target web --omit-default-module-path ./target/wasm32-unknown-unknown/release/ftml.wasm",
+    "compile:opt": "cd vendor && wasm-opt ftml_bg.wasm -O4 -c -o ftml_bg.wasm"
+  },
+  "main": "./cjs/wj-ftml-wasm.cjs",
+  "types": "./src/index.ts",
+  "module": "./esm/wj-ftml-wasm.mjs",
+  "exports": {
+    ".": {
+      "import": "./esm/wj-ftml-wasm.mjs",
+      "require": "./cjs/wj-ftml-wasm.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scpwiki/wikijump.git",
+    "directory": "web/modules/ftml-wasm"
+  },
+  "bugs": "https://scuttle.atlassian.net/servicedesk/customer/portal/2",
+  "homepage": "https://github.com/scpwiki/wikijump/tree/develop/web/modules/ftml-wasm"
+}
