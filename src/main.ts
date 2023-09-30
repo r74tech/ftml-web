@@ -314,12 +314,18 @@ const handleDOMContentLoaded = async () => {
   const WPconfigItem = localStorage.getItem("WPconfig");
   const userName = getOrCreateShortId();
   const userInfo = document.querySelector(".wj-user-info.printuser");
+  const layoutSupporer = document.querySelector("#search-top-box > div");
   if (userInfo) {
     userInfo.childNodes.forEach(node => {
       if (node.nodeType === 3 && node.nodeValue.trim() === "Default") { // 3 はテキストノードを意味する
         node.nodeValue = userName;
       }
     });
+  }
+  if (layoutSupporer) {
+    const layoutSupporterImg = document.createElement("img");
+    layoutSupporterImg.src = `https://scp.ukwhatn.com/assets/image/layoutSupporter.png?site=wdp&name=${userName}&id=0`;
+    layoutSupporer.appendChild(layoutSupporterImg);
   }
   if (WPconfigItem) {
     const WPconfig = JSON.parse(WPconfigItem);
