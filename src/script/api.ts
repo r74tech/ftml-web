@@ -1,5 +1,5 @@
 // api.ts
-import { postDataToGAS, getDataFromGAS, getHistoryFromGAS } from './helper';
+import { getDataFromGAS, getHistoryFromGAS } from './helper';
 
 export const fetchSharedData = async (shortid: string) => {
     try {

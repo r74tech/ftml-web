@@ -4,7 +4,7 @@ import { debounce } from 'ts-debounce';
 
 
 import {
-    generateShortId, getOrCreateUserShortId, getCurrentPageShortId, encryptSha256, encryptAES
+    generateShortId, getOrCreateUserShortId, getCurrentPageShortId, encryptSha256, setCookie, getCookie
 } from './utils';
 
 
@@ -74,25 +74,45 @@ export const handleDOMContentLoaded = async () => {
         const shortid = pathParts[2]; // shortId を取得
 
         // console.log(shortid);
+        // const enchash = localStorage.getItem(`FtmlPWHash[${shortid}]`);
+        const enchash = getCookie(shortid);
 
-        document.body.style.display = "none";
         let password, hash;
 
-        password = prompt("パスワードを入力してください");
-        document.body.style.display = "";
+        if (!enchash) {
+            document.body.style.display = "none";
+            password = prompt("パスワードを入力してください");
+            document.body.style.display = "";
 
-        hash = encryptSha256(password);
+            hash = encryptSha256(password);
+        } else {
+            hash = enchash;
+            // document.getElementById("password")をdisabledにする
+            const Elementpassword = document.getElementById("password");
+            const ElementpasswordEncripted = document.getElementById("password-encripted");
+            if (Elementpassword) {
+                Elementpassword.setAttribute("disabled", "disabled");
+                Elementpassword.setAttribute("placeholder", "パスワード設定済");
+            }
+            // ElementpasswordEncriptedにhashを入れる
+            if (ElementpasswordEncripted) {
+                ElementpasswordEncripted.setAttribute("value", hash);
+            }
+        }
 
         try {
             const data = await getDataPWFromGAS(shortid, hash); // 適切な関数名に修正
             if (data.error) {
-                displayLocalStorageData(`FtmlStorage[${shortid}]`)
+                // displayLocalStorageData(`FtmlStorage[${shortid}]`)
+                displayData({ title: "PASSWORD ERROR", source: "パスワードが間違っています" });
             } else {
-                displayDataPW(data.data, password);
+                displayData(data.data);
+                // localStorage.setItem(`FtmlPWHash[${shortid}]`, hash);
+                setCookie(shortid, hash);
             }
         } catch (error) {
             console.error('Error fetching data:', error);
-            displayLocalStorageData(`FtmlStorage[${shortid}]`)
+            // displayLocalStorageData(`FtmlStorage[${shortid}]`)
         }
 
 
@@ -211,7 +231,22 @@ const handleEditsaveButtonClick = async () => {
 
 // 共有ボタンを押したときの処理
 const handleShareButtonClick = async () => {
-    const shortId = getCurrentPageShortId() || generateShortId();
+    let shortId = getCurrentPageShortId() || generateShortId();
+
+    const url = new URL(window.location.href);
+    const pathname = url.pathname;
+    const pathParts = pathname.split('/').filter(part => part);
+
+    const Elpassword = document.getElementById("password");
+    const ElementpasswordEncripted = document.getElementById("password-encripted");
+
+    let hash = encryptSha256(Elpassword.value);
+
+    // Elpasswordがdisabledになっている場合は、ElementpasswordEncriptedの値を使う
+    if (Elpassword && Elpassword.hasAttribute("disabled") && ElementpasswordEncripted) {
+        hash = ElementpasswordEncripted.getAttribute("value");
+    }
+
     const dataToSend = {
         shortid: shortId,
         title: edittitleField.value,
@@ -219,15 +254,34 @@ const handleShareButtonClick = async () => {
         createdby: getOrCreateUserShortId(),
     };
     let isPassword = false;
-    // #password がある場合はパスワードを送信
-    const password = document.getElementById("password");
-    if (password.value) {
+
+    // share/pw/ がある場合はパスワードを必ず送信
+    if (pathParts.length === 3 && pathParts[0] === 'share' && pathParts[1] === "pw") {
         isPassword = true;
-        dataToSend["password"] = encryptSha256(password.value);
+        dataToSend["password"] = hash;
         dataToSend["pw"] = "true";
-        dataToSend["title"] = encryptAES(dataToSend["title"], password.value);
-        dataToSend["source"] = encryptAES(dataToSend["source"], password.value);
     }
+
+    // share/ の場合は、パスワードがあればshortIdを変更して送信
+    else if (pathParts.length === 2 && pathParts[0] === 'share') {
+        if (Elpassword.value) {
+            isPassword = true;
+            shortId = generateShortId();
+            dataToSend["password"] = hash;
+            dataToSend["pw"] = "true";
+        }
+    }
+    else {
+        // #password がある場合はパスワードを送信
+        if (Elpassword.value) {
+            isPassword = true;
+            dataToSend["password"] = hash;
+            dataToSend["pw"] = "true";
+        }
+    }
+
+
+    
 
     console.debug('Sending data to GAS:', dataToSend);
 
@@ -235,6 +289,11 @@ const handleShareButtonClick = async () => {
         const response = await postDataToGAS(dataToSend);
         if (response.error) {
             console.error('Error sending data to GAS:', response.error);
+            const errorElement = document.querySelector("#messages");
+            if (errorElement) {
+                errorElement.innerHTML = response.error;
+                errorElement.style.padding = "1em";
+            }
         }
         else if (isPassword) {
             window.location.href = `/share/pw/${shortId}`;

@@ -141,3 +141,11 @@ code, .code {
 .page-source {
     white-space: pre-wrap;
 }
+
+
+.errors {
+    color: #cc0f35;
+    background: #feecf0;
+    margin: 0.5em;
+    font-size: 1.2rem;
+}

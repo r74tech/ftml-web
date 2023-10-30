@@ -62,3 +62,28 @@ export function encryptAES(data: string, key: string) {
 export function decryptAES(data: string, key: string) {
     return crypto.AES.decrypt(data, key).toString(crypto.enc.Utf8);
 }
+
+
+export function setCookie(shortid: string, hash: string, daysToExpire: number = 7) {
+    var date = new Date();
+    date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + date.toUTCString();
+    document.cookie = "FtmlPWHash_" + shortid + "=" + hash + ";" + expires + ";path=/;Secure;";
+}
+
+export function getCookie(shortid: string): string | null {
+    const name = "FtmlPWHash_" + shortid + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return null;
+}
+    
