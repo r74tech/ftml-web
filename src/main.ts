@@ -5,7 +5,7 @@ import css from './css/wikidot.css';
 import init from './css/init.css';
 import collapsible from './css/collapsible.css';
 
-import { TextWikiParseInclude, Wiki } from './script/include';
+import { TextWikiParseInclude } from './script/include';
 
 
 import {
@@ -22,13 +22,15 @@ document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
 
 
+// const wiki: Wiki = {
+//   source: '[[include component:topsubtitle |TITLE=test]]',
+//   vars: {}
+// };
 
-const wiki: Wiki = {
-  source: '\n[[include self]]\n',
-  vars: {}
-};
-
-console.log("Source before parsing: \n", wiki.source);  // 'Some text before \n[[include some-page]]\n and some text after.' を出力
-const parser = new TextWikiParseInclude(wiki);
-parser.parse();
-console.log(wiki.source);  // 'Some text before This is some page content. and some text after.' を出力
+// console.log("Source before parsing: \n", wiki.source);
+// const parser = new TextWikiParseInclude(wiki);
+// parser.parse().then(() => {
+//   console.log("Source after parsing: \n", wiki.source);
+// }).catch(error => {
+//   console.error("Parsing failed with error: ", error);
+// });

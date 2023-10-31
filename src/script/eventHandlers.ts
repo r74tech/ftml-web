@@ -7,6 +7,7 @@ import {
     generateShortId, getOrCreateUserShortId, getCurrentPageShortId, encryptSha256, setCookie, getCookie
 } from './utils';
 
+import { TextWikiParseInclude } from './include';
 
 
 import {
@@ -158,6 +159,22 @@ const handleEditpageInput = debounce((event) => {
 
     const storageKey = shortid ? `FtmlStorage[${shortid}]` : 'FtmlStorage';
     localStorage.setItem(storageKey, JSON.stringify(FtmlStorageItem));
+
+    // const WPInc = {
+    //     source: value,
+    //     vars: {}
+    // };
+    // const parser = new TextWikiParseInclude(WPInc);
+    // parser.parse().then(() => {
+    //     console.log("Source after parsing: \n", WPInc.source);
+    //     ftml.postMessage({ value: WPInc.source, type });
+    // }).catch(error => {
+    //     console.error("Parsing failed with error: ", error);
+    // });
+
+    // [WIP] includeの処理を行う
+    // include元のソースを保持する。(GASの実行制限を考慮して、include元のソースを保持する必要がある)
+    // include元を取得するためのボタンを用意する(5秒おきに取得するのは非効率的)
 
     ftml.postMessage({ value, type });
 
