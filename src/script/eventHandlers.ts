@@ -7,7 +7,7 @@ import {
     generateShortId, getOrCreateUserShortId, getCurrentPageShortId, encryptSha256, setCookie, getCookie
 } from './utils';
 
-import { TextWikiParseInclude } from './include';
+import { TextWikiParseInclude } from "./include";
 
 
 import {
@@ -174,9 +174,28 @@ const handleEditpageInput = debounce((event) => {
 
     // [WIP] includeの処理を行う
     // include元のソースを保持する。(GASの実行制限を考慮して、include元のソースを保持する必要がある)
-    // include元を取得するためのボタンを用意する(5秒おきに取得するのは非効率的)
+    // include元のページを配列で持っておいて、その中身に変更があった場合は、include元のソースを増えたものだけ取得しに行く
 
-    ftml.postMessage({ value, type });
+
+    const wiki = {
+        source: editpageField.value,
+        vars: {}
+    };
+
+    // console.log("Source before parsing: \n", wiki.source);
+    const parser = new TextWikiParseInclude(wiki);
+
+    // onEditでthis.wiki.sourceを更新する。editpageFieldが更新されたらonEditにeventを渡す。
+    // editpageField.addEventListener('input', parser.onEdit.bind(parser));
+    parser.onEdit(event).then(() => {
+        // console.log("Source after parsing: \n", wiki.source);
+        ftml.postMessage({ value: wiki.source, type });
+    }
+    ).catch(error => {
+        console.error("Parsing failed with error: ", error);
+    });
+
+    // ftml.postMessage({ value, type });
 
 }, 1000);
 
@@ -298,7 +317,7 @@ const handleShareButtonClick = async () => {
     }
 
 
-    
+
 
     console.debug('Sending data to GAS:', dataToSend);
 
