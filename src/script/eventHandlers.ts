@@ -7,6 +7,7 @@ import {
     generateShortId, getOrCreateUserShortId, getCurrentPageShortId, encryptSha256, setCookie, getCookie
 } from './utils';
 
+import { TextWikiParseInclude } from "./include";
 
 
 import {
@@ -159,7 +160,42 @@ const handleEditpageInput = debounce((event) => {
     const storageKey = shortid ? `FtmlStorage[${shortid}]` : 'FtmlStorage';
     localStorage.setItem(storageKey, JSON.stringify(FtmlStorageItem));
 
-    ftml.postMessage({ value, type });
+    // const WPInc = {
+    //     source: value,
+    //     vars: {}
+    // };
+    // const parser = new TextWikiParseInclude(WPInc);
+    // parser.parse().then(() => {
+    //     console.log("Source after parsing: \n", WPInc.source);
+    //     ftml.postMessage({ value: WPInc.source, type });
+    // }).catch(error => {
+    //     console.error("Parsing failed with error: ", error);
+    // });
+
+    // [WIP] includeの処理を行う
+    // include元のソースを保持する。(GASの実行制限を考慮して、include元のソースを保持する必要がある)
+    // include元のページを配列で持っておいて、その中身に変更があった場合は、include元のソースを増えたものだけ取得しに行く
+
+
+    const wiki = {
+        source: editpageField.value,
+        vars: {}
+    };
+
+    // console.log("Source before parsing: \n", wiki.source);
+    const parser = new TextWikiParseInclude(wiki);
+
+    // onEditでthis.wiki.sourceを更新する。editpageFieldが更新されたらonEditにeventを渡す。
+    // editpageField.addEventListener('input', parser.onEdit.bind(parser));
+    parser.onEdit(event).then(() => {
+        // console.log("Source after parsing: \n", wiki.source);
+        ftml.postMessage({ value: wiki.source, type });
+    }
+    ).catch(error => {
+        console.error("Parsing failed with error: ", error);
+    });
+
+    // ftml.postMessage({ value, type });
 
 }, 1000);
 
@@ -281,7 +317,7 @@ const handleShareButtonClick = async () => {
     }
 
 
-    
+
 
     console.debug('Sending data to GAS:', dataToSend);
 
