@@ -1,7 +1,7 @@
 import { ftml } from './worker';
 import { setTextContentForElement } from './utils';
 
-const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxFUwsKJtnPNIwfUqg4BGwaT8N1E9l7REkEza1VFmAssXGlvWyhWKs4-GR-Mp0UWzMygg/exec"
+const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtEu4pZuQowfI0940Z4yTq77TLCZiL36wYZvq37Rv-knLteWMz9r95y5BN9abUrcmIbQ/exec"
 
 
 
