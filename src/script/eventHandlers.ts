@@ -21,7 +21,7 @@ import {
 } from './elements';
 
 import { loadlocales } from './locales';
-import { displayLocalStorageData, displayData, displayDataPW } from './loader';
+import { displayLocalStorageData, displayData } from './loader';
 
 import { ftml } from './worker';
 
