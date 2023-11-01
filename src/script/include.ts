@@ -27,6 +27,10 @@ export class TextWikiParseInclude {
     }
 
     async parse(): Promise<void> {
+        this.updateIncludedPages(); // 引数なしで呼び出し
+        await this.checkForNewIncludes();
+        // this.saveIncludedPagesToLocalStorage();
+
         let level = 0;
         let oldSource;
         do {
@@ -119,9 +123,6 @@ export class TextWikiParseInclude {
         const source = (event.target as HTMLTextAreaElement).value;
         // console.log('Source changed:', source);
         this.wiki.source = source; // クラス内のwiki.sourceを更新
-        this.updateIncludedPages(); // 引数なしで呼び出し
-        await this.checkForNewIncludes();
-        this.saveIncludedPagesToLocalStorage();
 
         // paese()を呼び出し、wiki.sourceを更新
         await this.parse();
