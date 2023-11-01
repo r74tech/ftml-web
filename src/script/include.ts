@@ -29,7 +29,7 @@ export class TextWikiParseInclude {
     async parse(): Promise<void> {
         this.updateIncludedPages(); // 引数なしで呼び出し
         await this.checkForNewIncludes();
-        // this.saveIncludedPagesToLocalStorage();
+        this.saveIncludedPagesToLocalStorage();
 
         let level = 0;
         let oldSource;
@@ -40,6 +40,13 @@ export class TextWikiParseInclude {
                 const output = await this.process(matches.slice(1));
                 this.wiki.source = this.wiki.source.replace(this.regex, output);
             }
+            // includeの中にincludeがある場合、再帰的に処理する
+            // updateIncludedPagesを呼び出す
+            // console.log("parse(): this.wiki.source:", this.wiki.source)
+            this.updateIncludedPages();
+            await this.checkForNewIncludes();
+            this.saveIncludedPagesToLocalStorage();
+
             level++;
         } while (oldSource !== this.wiki.source && level <= 10);
         this.saveIncludedPagesToLocalStorage();
@@ -93,11 +100,13 @@ export class TextWikiParseInclude {
     }
 
     private updateIncludedPages() {
-        const regex = /\[\[include ([a-zA-Z0-9\s\-:]+?)(\s+.*?)?\]\]/g;
+        const regex = /\[\[include ([a-zA-Z0-9\s\-:]+?)(\s+.*?)?\]\]/imsg;
         let match;
+        // console.log('updateIncludedPages(): this.wiki.source:', this.wiki.source);
         while ((match = regex.exec(this.wiki.source)) !== null) {
             // this.includedPages.push(match[1].trim()); //重複を削除したい
             const pageName = match[1].trim();
+            // console.log('updateIncludedPages(): match:', match);
             if (!this.includedPages.includes(pageName)) {
                 this.includedPages.push(pageName);
             }
