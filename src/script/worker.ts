@@ -16,11 +16,10 @@ const handleMessage = (event) => {
     const cleanedHtml = html.replace(/<wj-body class="wj-body">/g, '').replace(/<\/wj-body>/g, '');
     const pageStyles = document.getElementById('page-styles');
     if (styles.length > 0 && pageStyles) {
-        styles.forEach((style: string) => {
-            const styleEl = document.createElement('style');
-            styleEl.textContent = style;
-            pageStyles.appendChild(styleEl);
-        });
+        setInnerHtml(
+            pageStyles,
+            styles.map((v) => `<style>\n${v.replace(/</g, '&lt;')}\n</style>`).join('\n\n')
+        );
     }
 
     setInnerHtml(targetContent, cleanedHtml);
