@@ -2,6 +2,7 @@ import { editpageField, edittitleField, editsideField} from './elements';
 
 import { ftml } from './worker';
 import { decryptAES} from './utils';
+import { TextWikiParseInclude } from "./include";
 
 // ローカルストレージからデータを読み込んで表示する関数
 export const displayLocalStorageData = (itemName = "FtmlStorage") => {
@@ -13,7 +14,24 @@ export const displayLocalStorageData = (itemName = "FtmlStorage") => {
         editsideField.value = FtmlStorage.side;
 
         if (FtmlStorage.page) {
-            ftml.postMessage({ value: FtmlStorage.page, type: "page" });
+            // ftml.postMessage({ value: FtmlStorage.page, type: "page" });
+            const wiki = {
+                source: FtmlStorage.page,
+                vars: {}
+            };
+
+            // console.log("Source before parsing: \n", wiki.source);
+            const parser = new TextWikiParseInclude(wiki);
+
+            // onEditでthis.wiki.sourceを更新する。editpageFieldが更新されたらonEditにeventを渡す。
+            // editpageField.addEventListener('input', parser.onEdit.bind(parser));
+            parser.parse().then(() => {
+                // console.log("Source after parsing: \n", wiki.source);
+                ftml.postMessage({ value: wiki.source, type: "page" });
+            }
+            ).catch(error => {
+                console.error("Parsing failed with error: ", error);
+            });
         }
 
         if (FtmlStorage.side) {
@@ -33,7 +51,24 @@ export const displayData = (data: any) => {
     editsideField.value = ''; // Assuming there's no side in this data structure.
 
     if (data.source) {
-        ftml.postMessage({ value: data.source, type: "page" });
+        // ftml.postMessage({ value: data.source, type: "page" });
+        const wiki = {
+            source: data.source,
+            vars: {}
+        };
+
+        // console.log("Source before parsing: \n", wiki.source);
+        const parser = new TextWikiParseInclude(wiki);
+
+        // onEditでthis.wiki.sourceを更新する。editpageFieldが更新されたらonEditにeventを渡す。
+        // editpageField.addEventListener('input', parser.onEdit.bind(parser));
+        parser.parse().then(() => {
+            // console.log("Source after parsing: \n", wiki.source);
+            ftml.postMessage({ value: wiki.source, type: "page" });
+        }
+        ).catch(error => {
+            console.error("Parsing failed with error: ", error);
+        });
     }
 
     if (data.title) {

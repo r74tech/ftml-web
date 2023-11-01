@@ -147,7 +147,6 @@ const handleEditpageInput = debounce((event) => {
     const { target } = event;
     if (!(target instanceof HTMLTextAreaElement)) return;
 
-    const value = target.value;
     const type = "page";
     const shortid = getCurrentPageShortId();
 

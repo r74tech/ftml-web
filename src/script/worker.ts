@@ -14,16 +14,16 @@ const handleMessage = (event) => {
     };
     const targetContent = document.getElementById(contentMapping[type]) || document.getElementById('page-content');
     const cleanedHtml = html.replace(/<wj-body class="wj-body">/g, '').replace(/<\/wj-body>/g, '');
+    const pageStyles = document.getElementById('page-styles');
+    if (styles.length > 0 && pageStyles) {
+        styles.forEach((style: string) => {
+            const styleEl = document.createElement('style');
+            styleEl.textContent = style;
+            pageStyles.appendChild(styleEl);
+        });
+    }
 
     setInnerHtml(targetContent, cleanedHtml);
-
-    const pageStyles = document.getElementById('page-styles');
-    if (pageStyles) {
-        setInnerHtml(
-            pageStyles,
-            styles.map((v) => `<style>\n${v.replace(/</g, '&lt;')}\n</style>`).join('\n\n')
-        );
-    }
 };
 
 ftml.onmessage = handleMessage;
