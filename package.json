@@ -24,7 +24,7 @@
 		"postcss": "^8.4.28",
 		"postcss-merge-queries": "^1.0.3",
 		"shortid": "^2.2.16",
-		"svelte": "^3.59.2",
+		"svelte": "^4.2.7",
 		"svelte-store": "^0.0.2",
 		"terser": "^5.19.2",
 		"throttle-typescript": "^1.1.0",
