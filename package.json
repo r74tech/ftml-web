@@ -16,7 +16,7 @@
 		"codemirror": "^6.0.1",
 		"comlink": "^4.4.1",
 		"crypto-js": "^4.2.0",
-		"esbuild": "^0.17.19",
+		"esbuild": "^0.19.10",
 		"eslint": "^8.48.0",
 		"hfmath": "^0.0.2",
 		"include-media": "^2.0.0",
