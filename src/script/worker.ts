@@ -1,13 +1,13 @@
-import ftmlWorker from '../ftml.web.worker.js?bundled-worker&dataurl';
 import { setInnerHtml } from './utils';
 import wikidotmodule from './module';
 
-export const ftml = new Worker(ftmlWorker, {
+export const ftml = new Worker("../ftml.web.worker.js", {
     type: 'module',
 });
 
 const handleMessage = (event) => {
     const { html, styles, type } = event.data;
+    console.log('Received message from worker:', event.data);
     const contentMapping = {
         page: 'page-content',
         side: 'side-bar',
@@ -26,5 +26,4 @@ const handleMessage = (event) => {
     setInnerHtml(targetContent, cleanedHtml);
     wikidotmodule();
 };
-
 ftml.onmessage = handleMessage;
