@@ -3,7 +3,7 @@ import { init, renderHTML, ready, loading, makeInfo } from './lib/ftml-wasm/esm/
 init();
 
 onmessage = async (e) => {
-  if (!ftml.ready) await ftml.loading;
+  if (!ready) await loading;
   const ftmlSource = e.data.value;
 
   const info = makeInfo({ score: 0 });
