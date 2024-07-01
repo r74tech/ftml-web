@@ -3,6 +3,10 @@ import autoprefixer from "autoprefixer"
 import bundledWorker from './plugins/vite-plugin-bundled-worker';
 import crossPlatform from './plugins/vite-plugin-cross-platform';
 import path, { resolve, join } from 'path'
+// import crypto from 'crypto'
+
+// const generateNonce = () => crypto.randomBytes(16).toString('base64')
+
 /**
  * @type {import('vite').UserConfig}
  * @see https://vitejs.dev/config/
@@ -19,6 +23,18 @@ module.exports = {
       strict: false,
       allow: ['./'],
     },
+    // middlewares: [
+    //   (req, res, next) => {
+    //     const nonce = generateNonce()
+    //     res.setHeader(
+    //       'Content-Security-Policy',
+    //       `script-src 'self' 'nonce-${nonce}' https: www.googletagmanager.com https://pagead2.googlesyndication.com;`
+    //     )
+    //     res.locals = res.locals || {}
+    //     res.locals.nonce = nonce
+    //     next()
+    //   }
+    // ],
     hmr: false,
   },
   plugins: [

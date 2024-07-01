@@ -8,9 +8,9 @@
 	},
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
-		"@types/node": "^20.14.6",
-		"@types/wicg-file-system-access": "^2020.9.8",
-		"@vscode-ftml/ftml-wasm": "^1.18.1",
+		"@r74tech/ftml-wasm": "1.24.0",
+		"@types/node": "^20.5.6",
+		"@types/wicg-file-system-access": "^2020.9.6",
 		"@wikijump/ftml-components": "link:modules\ftml-components",
 		"autoprefixer": "^10.4.19",
 		"codemirror": "^6.0.1",
