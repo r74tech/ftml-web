@@ -16,7 +16,7 @@ const handleMessage = (event) => {
     const targetContent = document.getElementById(contentMapping[type]) || document.getElementById('page-content');
     const cleanedHtml = html.replace(/<wj-body class="wj-body">/g, '').replace(/<\/wj-body>/g, '');
     const pageStyles = document.getElementById('page-styles');
-    if (styles.length > 0 && pageStyles) {
+    if (styles && styles.length > 0 && pageStyles) {
         setInnerHtml(
             pageStyles,
             styles.map((v) => `<style>\n${v.replace(/</g, '&lt;')}\n</style>`).join('\n\n')
